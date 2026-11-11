@@ -3,6 +3,8 @@ import Layout from "../layouts/DefaultLayout.astro";
 import Navbar from "../components/astro/Navbar.astro";
 import Footer from "../components/astro/Footer.astro";
 import Button from "@/components/astro/button.astro";
+import { Image } from "astro:assets";
+import forestShrine from "@/assets/img/forest_shrine.jpg";
 ---
 
 <Layout title="Studio Eien" description="Studio">
@@ -58,7 +60,7 @@ import Button from "@/components/astro/button.astro";
           </p>
         </div>
         <div class="container studio-story__picture" data-type="narrow">
-          <img src="/src/assets/img/forest_shrine.jpg" />
+          <Image src={forestShrine} alt="Forest Shrine" />
         </div>
       </div>
     </section>

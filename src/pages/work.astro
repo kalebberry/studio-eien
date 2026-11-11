@@ -5,6 +5,8 @@ import Footer from '../components/astro/Footer.astro';
 import Button from '@/components/astro/button.astro';
 import WorkGallery from '../components/astro/WorkGallery.astro';
 import LinkArrow from '@/components/astro/linkArrowIcon.astro';
+import { Image } from 'astro:assets';
+import testImg from '@/assets/img/test.jfif';
 ---
 
 <Layout title='Studio Eien' description='Work'>
@@ -66,7 +68,7 @@ import LinkArrow from '@/components/astro/linkArrowIcon.astro';
       </div>
 
       <div class='container flow-large' data-type='wide'>
-        <img src='/src/assets/img/test.jfif' />
+        <img src={testImg.src} alt='Featured Study: Exilium' />
         <div class='work-featured__tags'>
           <div><p>INTERFACE DESIGN</p></div>
           <div><p>UI SYSTEMS</p></div>
