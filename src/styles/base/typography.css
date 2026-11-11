@@ -1,86 +1,112 @@
 @layer base {
-  h1, h2, h3, h4, h5, h6 {
-    line-height: var(--leading-tight, 1.1);
-    text-wrap: balance;
-    font-family: "Familjen Grotesk", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: bold;
-    font-style: normal;
-  }
+	/* --- Base Styles (Standard Laptops & Small Desktops) --- */
+	html {
+		font-size: 100%; /* Usually defaults to 16px in most browsers */
+	}
 
-  h1 {
-    font-size: var(--fs-step-11);
-  }
+	/* --- Ultra-Wide Breakpoint (27" Monitors & Above) --- */
+	@media screen and (min-width: 1920px) {
+		html {
+			/* Instantly bumps up every rem/em value by 25% */
+			font-size: 115%; /* Scales your base up to 20px */
+		}
+	}
 
-  h2 {
-    font-size: var(--fs-step-9);
-  }
+	/* --- Optional: 4K / Massive Desktop Breakpoint --- */
+	@media screen and (min-width: 2560px) {
+		html {
+			/* Instantly bumps up every rem/em value by 50% */
+			font-size: 120%; /* Scales your base up to 24px */
+		}
+	}
 
-  h3 {
-    font-size: var(--fs-step-6);
-  }
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		line-height: var(--leading-tight, 1.1);
+		text-wrap: balance;
+		font-family: 'Familjen Grotesk', sans-serif;
+		font-optical-sizing: auto;
+		font-weight: bold;
+		font-style: normal;
+	}
 
-  h4 {
-    font-size: var(--fs-step-5);
-  }
+	h1 {
+		font-size: var(--fs-step-11);
+	}
 
-  h5 {
-    font-size: var(--fs-step-4);
-  }
+	h2 {
+		font-size: var(--fs-step-9);
+	}
 
-  h6 {
-    font-size: var(--fs-step-3);
-  }
+	h3 {
+		font-size: var(--fs-step-6);
+	}
 
-  p,
-  li,
-  .btn {
-    font-family: "Space Grotesk", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
-    font-size: var(--fs-step-2);
-    line-height: 1.5;
-    max-width: 45ch;
-    word-break: auto-phrase;
-    text-wrap: pretty;
-  }
+	h4 {
+		font-size: var(--fs-step-5);
+	}
 
-  @media (max-width: 768px) {
-    h1 {
-      font-size: var(--fs-step-10);
-    }
+	h5 {
+		font-size: var(--fs-step-4);
+	}
 
-    p {
-      font-size: var(--fs-step-2);
-    }
-  }
+	h6 {
+		font-size: var(--fs-step-3);
+	}
 
-  .jp-text {
-    font-family: "WDXL Lubrifont JP N", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-  }
+	p,
+	li,
+	.btn {
+		font-family: 'Space Grotesk', sans-serif;
+		font-optical-sizing: auto;
+		font-weight: 400;
+		font-style: normal;
+		font-size: var(--fs-step-2);
+		line-height: 1.5;
+		max-width: 45ch;
+		word-break: auto-phrase;
+		text-wrap: pretty;
+	}
 
-  .regular-text {
-    font-family: "Space Grotesk", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
-  }
+	@media (max-width: 768px) {
+		h1 {
+			font-size: var(--fs-step-10);
+		}
 
-  .header-text {
-    font-family: "Familjen Grotesk", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: bold;
-    font-style: normal;
-  }
+		p {
+			font-size: var(--fs-step-2);
+		}
+	}
 
-  .btn {
-    font-family: "Familjen Grotesk", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: bold;
-    font-style: normal;
-    text-transform: capitalize;
-  }
+	.jp-text {
+		font-family: 'WDXL Lubrifont JP N', sans-serif;
+		font-weight: 400;
+		font-style: normal;
+	}
+
+	.regular-text {
+		font-family: 'Space Grotesk', sans-serif;
+		font-optical-sizing: auto;
+		font-weight: 400;
+		font-style: normal;
+	}
+
+	.header-text {
+		font-family: 'Familjen Grotesk', sans-serif;
+		font-optical-sizing: auto;
+		font-weight: bold;
+		font-style: normal;
+	}
+
+	.btn {
+		font-family: 'Familjen Grotesk', sans-serif;
+		font-optical-sizing: auto;
+		font-weight: bold;
+		font-style: normal;
+		text-transform: capitalize;
+	}
 }
