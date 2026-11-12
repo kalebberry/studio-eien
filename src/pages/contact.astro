@@ -12,12 +12,196 @@ const body = encodeURIComponent(
 const mailto = `mailto:${email}?subject=${subject}&body=${body}`;
 ---
 
-<Layout title='Contact — Studio Eien' description='Reach out to Studio Eien to start your project'>
+<Layout
+	title='Reach Out — Studio Eien'
+	description="Let's start a conversation. Reach out to Studio Eien for frontend architecture, design systems, and thoughtful web projects."
+>
 	<main>
 		<Navbar />
 
-		<section>Hellow there</section>
+		<!-- Hero Section -->
+		<section class='hero hero-content contact-hero'>
+			<div class='container'>
+				<header>
+					<div class='hero__title'>
+						<span class='text-accent'>おはなし</span>
+						<h1>Let's Connect</h1>
+					</div>
 
-		<Footer />
+					<p>
+						Whether you have a project in mind, an idea taking shape, or simply want to connect, I'd
+						love to hear from you.
+					</p>
+				</header>
+			</div>
+		</section>
+
+		<!-- Method Divider -->
+		<div class='decoration' data-type='full-bleed'>
+			<div class='container' data-type='full-bleed'>
+				<hr />
+				<div class='decoration__text__end'>
+					<p>SECTION: REACH OUT ⟡ METHOD SIGNATURE: V.01</p>
+				</div>
+			</div>
+		</div>
+
+		<!-- Main Contact Composition -->
+		<section class='contact-body'>
+			<div class='container contact-grid' data-type='wide'>
+				<!-- Primary Contact Column -->
+				<div class='contact-primary'>
+					<div class='contact-block'>
+						<span class='contact-label'>INQUIRIES & COLLABORATIONS</span>
+						<div class='contact-email-wrapper'>
+							<a
+								href={mailto}
+								class='contact-email-link'
+								aria-label={`Send email to Kaleb Berry at ${email}`}
+							>
+								<span>{email}</span>
+								<svg
+									class='contact-email-icon'
+									xmlns='http://www.w3.org/2000/svg'
+									viewBox='0 0 24 24'
+									fill='none'
+									stroke='currentColor'
+									stroke-width='2'
+									stroke-linecap='round'
+									stroke-linejoin='round'
+									aria-hidden='true'
+								>
+									<line x1='7' y1='17' x2='17' y2='7'></line>
+									<polyline points='7 7 17 7 17 17'></polyline>
+								</svg>
+							</a>
+
+							<button
+								type='button'
+								class='contact-copy-btn'
+								id='copyEmailBtn'
+								aria-label='Copy email address to clipboard'
+							>
+								<svg
+									class='copy-icon'
+									xmlns='http://www.w3.org/2000/svg'
+									viewBox='0 0 24 24'
+									fill='none'
+									stroke='currentColor'
+									stroke-width='2'
+									stroke-linecap='round'
+									stroke-linejoin='round'
+									aria-hidden='true'
+								>
+									<rect x='9' y='9' width='13' height='13' rx='2' ry='2'></rect>
+									<path d='M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1'></path>
+								</svg>
+								<span class='copy-default'>Copy address</span>
+								<span class='copy-success' aria-live='polite'>Copied!</span>
+							</button>
+						</div>
+					</div>
+
+					<!-- Personal Note: Welcoming, grounded, and sincere -->
+					<div class='contact-personal-note'>
+						<p>
+							Studio Eien is an independent creative practice founded by Kaleb Berry. Every message
+							goes directly to my personal inbox, and I take time to read and respond to every note.
+						</p>
+					</div>
+				</div>
+
+				<!-- Editorial Guidelines / Prompts Column (Open broadsheet style) -->
+				<aside class='contact-guidelines'>
+					<header class='contact-guidelines__header'>
+						<span class='contact-label'>PROJECT GUIDELINES</span>
+						<h3>Helpful details to include in your note</h3>
+					</header>
+
+					<ol class='contact-prompts' role='list'>
+						<li>
+							<span class='prompt-num'>01</span>
+							<div>
+								<strong>The Vision & Scope</strong>
+								<p>
+									A few sentences about who you are, what you are creating, and what you hope this
+									website or system will accomplish.
+								</p>
+							</div>
+						</li>
+						<li>
+							<span class='prompt-num'>02</span>
+							<div>
+								<strong>Timing & Milestones</strong>
+								<p>Your ideal launch target or any scheduling constraints you have in mind.</p>
+							</div>
+						</li>
+						<li>
+							<span class='prompt-num'>03</span>
+							<div>
+								<strong>References & Materials</strong>
+								<p>
+									Any existing branding, design references, wireframes, or live sites whose craft
+									you admire.
+								</p>
+							</div>
+						</li>
+					</ol>
+
+					<div class='contact-guidelines__footer'>
+						<p>Clicking the email link opens a message draft with these prompts ready to go.</p>
+					</div>
+				</aside>
+			</div>
+		</section>
+
+		<!-- End Divider -->
+		<div class='decoration' data-type='full-bleed'>
+			<div class='container' data-type='full-bleed'>
+				<hr />
+				<div class='decoration__text__end'>
+					<p>STUDIO EIEN ⟡ DIRECT COMMUNICATION</p>
+				</div>
+			</div>
+		</div>
 	</main>
+
+	<Footer />
 </Layout>
+
+<script>
+	document.addEventListener('DOMContentLoaded', () => {
+		const copyBtn = document.getElementById('copyEmailBtn');
+		const emailAddress = 'Kaleb.Berry@outlook.com';
+
+		if (copyBtn) {
+			copyBtn.addEventListener('click', async () => {
+				try {
+					await navigator.clipboard.writeText(emailAddress);
+					copyBtn.classList.add('is-copied');
+					setTimeout(() => {
+						copyBtn.classList.remove('is-copied');
+					}, 2200);
+				} catch (err) {
+					// Fallback for older environments
+					const textArea = document.createElement('textarea');
+					textArea.value = emailAddress;
+					textArea.style.position = 'fixed';
+					textArea.style.opacity = '0';
+					document.body.appendChild(textArea);
+					textArea.select();
+					try {
+						document.execCommand('copy');
+						copyBtn.classList.add('is-copied');
+						setTimeout(() => {
+							copyBtn.classList.remove('is-copied');
+						}, 2200);
+					} catch (e) {
+						console.warn('Clipboard copy failed:', e);
+					}
+					document.body.removeChild(textArea);
+				}
+			});
+		}
+	});
+</script>

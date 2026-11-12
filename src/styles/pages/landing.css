@@ -1,6 +1,6 @@
 @layer pages {
 	.hero {
-		padding-block: var(--space-stack-lg, 6rem);
+		padding-block: var(--space-stack-md, 4rem);
 
 		.hero__title {
 			max-width: max-content;
@@ -18,7 +18,7 @@
 	}
 
 	.featured {
-		padding-block: var(--space-stack-lg, 6rem);
+		padding-block: var(--space-stack-md, 4rem);
 		img {
 			border-radius: 0.6rem;
 			content-visibility: auto;
@@ -40,7 +40,7 @@
 	}
 
 	.process {
-		padding-block: var(--space-stack-lg, 6rem);
+		padding-block: var(--space-stack-md, 4rem);
 
 		header {
 			margin-inline: auto;
@@ -121,7 +121,7 @@
 	}
 
 	.services {
-		padding-block: var(--space-stack-lg, 6rem);
+		padding-block: var(--space-stack-md, 4rem);
 
 		header {
 			margin-inline: auto;
@@ -159,7 +159,7 @@
 				border-radius: 0.5rem;
 				transition: padding-inline 0.3s ease;
 
-				img{
+				img {
 					border-radius: 0.5rem;
 					max-width: 90%;
 				}
@@ -189,7 +189,7 @@
 	}
 
 	.conversion {
-		padding-block: var(--space-stack-lg, 6rem);
+		padding-block: var(--space-stack-md, 4rem);
 
 		header {
 			margin-inline: auto;

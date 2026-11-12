@@ -1,6 +1,38 @@
 @layer pages {
+	.work-hero {
+		padding-block: var(--space-stack-md, 4rem);
+
+		.hero__title {
+			max-width: max-content;
+			margin-block-end: clamp(1rem, 3vw, var(--spacing-32, 2rem));
+
+			h1 {
+				/* Prominent on mobile without overflowing narrow viewports */
+				font-size: clamp(2.35rem, 8.5vw, var(--fs-step-11));
+				line-height: 1.05;
+				overflow-wrap: break-word;
+				word-break: auto-phrase;
+			}
+
+			span {
+				display: flex;
+				justify-content: flex-end;
+				font-size: var(--fs-step-2);
+				font-family: 'WDXL Lubrifont JP N', sans-serif;
+				font-weight: 400;
+				font-style: normal;
+			}
+		}
+
+		p {
+			font-size: clamp(1.05rem, 2.2vw, var(--fs-step-2));
+			line-height: 1.55;
+			max-width: 48ch;
+		}
+	}
+
 	.work-statement {
-		padding-block: var(--space-stack-md, 2rem) var(--space-stack-lg, 4rem);
+		padding-block: var(--space-stack-md, 4rem);
 
 		.work__title {
 			max-width: max-content;
@@ -18,7 +50,7 @@
 	}
 
 	.work-featured {
-		padding-block: var(--space-stack-md, 2rem) var(--space-stack-lg, 4rem);
+		padding-block: var(--space-stack-md, 4rem);
 
 		.work-featured__title {
 			max-width: max-content;
@@ -33,7 +65,7 @@
 				font-style: normal;
 			}
 		}
-		.work-featured__tags{
+		.work-featured__tags {
 			display: flex;
 			justify-content: space-between;
 			color: oklab(44.952999999999996% 0 -0.00005);
@@ -51,7 +83,7 @@
 				font-size: var(--fs-step-3);
 				transition: all 0.5s ease;
 
-				&:hover{
+				&:hover {
 					border-bottom: 1px solid #2b2b2b;
 				}
 			}
