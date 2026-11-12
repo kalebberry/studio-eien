@@ -35,8 +35,8 @@ import Button from '@/components/astro/button.astro';
 		</div>
 
 		<section class='studio-story'>
-			<div class='container kos-flex-grid' data-type='wide'>
-				<header>
+			<div class='container studio-story__grid' data-type='wide'>
+				<header class='studio-story__header'>
 					<div class='studio-story__title'>
 						<h3>
 							Studio Eien began with a simple idea: to help people bring their visions into the
@@ -44,7 +44,7 @@ import Button from '@/components/astro/button.astro';
 						</h3>
 					</div>
 				</header>
-				<div class='flow-large'>
+				<div class='studio-story__body flow-large'>
 					<p>
 						For artists, creatives, and businesses, a website can be more than a place to share
 						information. It can be a starting point, a home for their work, and an expression of who
@@ -75,37 +75,39 @@ import Button from '@/components/astro/button.astro';
 		</div>
 
 		<section class='behind-studio'>
-			<div class='container kos-flex-grid' data-type='wide'>
-				<div class='behind-studio__picture'>
-					<img src='/assets/img/forest_shrine.jpg' />
-				</div>
-				<div>
-					<header>
-						<div class='behind-studio__title'>
-							<span class='text-accent'>つくりて</span>
-							<h3>Behind the studio.</h3>
-						</div>
-					</header>
-					<div class='flow-large'>
-						<p>
-							Studio Eien is an independent creative practice founded by Kaleb Berry, a frontend
-							developer with a love for design, technology, and the creative possibilities of the
-							web.
-						</p>
-
-						<p>
-							My work is rooted in a love for bringing ideas to life through code. From thoughtful
-							layouts and expressive interactions to the systems that hold everything together, I
-							enjoy exploring how design and engineering can create experiences that feel both
-							beautiful and purposeful.
-						</p>
-						<p>
-							Studio Eien gives me the freedom to pursue that craft while working directly with
-							people who have something they want to share with the world. For me, the most
-							rewarding part is creating something together that they're genuinely excited to call
-							their own.
-						</p>
+			<div class='container behind-studio__grid' data-type='wide'>
+				<header class='behind-studio__header'>
+					<div class='behind-studio__title'>
+						<span class='text-accent'>つくりて</span>
+						<h3>Behind the studio.</h3>
 					</div>
+				</header>
+				<figure class='behind-studio__picture'>
+					<img src='/assets/img/forest_shrine.jpg' alt='Quiet beauty of a Japanese forest shrine' />
+					<figcaption class='behind-studio__caption'>
+						<span>FIG. 01 — EIEN ARCHIVE</span>
+						<span>森の神社 ⟡ 2026</span>
+					</figcaption>
+				</figure>
+				<div class='behind-studio__bio flow-large'>
+					<p>
+						Studio Eien is an independent creative practice founded by Kaleb Berry, a frontend
+						developer with a love for design, technology, and the creative possibilities of the
+						web.
+					</p>
+
+					<p>
+						My work is rooted in a love for bringing ideas to life through code. From thoughtful
+						layouts and expressive interactions to the systems that hold everything together, I
+						enjoy exploring how design and engineering can create experiences that feel both
+						beautiful and purposeful.
+					</p>
+					<p>
+						Studio Eien gives me the freedom to pursue that craft while working directly with
+						people who have something they want to share with the world. For me, the most
+						rewarding part is creating something together that they're genuinely excited to call
+						their own.
+					</p>
 				</div>
 			</div>
 		</section>

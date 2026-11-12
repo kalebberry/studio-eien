@@ -63,12 +63,25 @@
 		}
 	}
 
-	.studio-story {
-		padding-block: var(--space-stack-md, 2rem) var(--space-stack-lg, 4rem);
+	/* ==========================================================================
+	   Studio Page Responsive Refinements
+	   ========================================================================== */
 
-		.studio-story__title {
+	/* --- Hero Section (.hero) on Studio page --- */
+	.hero.hero-content {
+		padding-block: clamp(2.5rem, 7vh, var(--space-stack-lg, 6rem));
+
+		.hero__title {
 			max-width: max-content;
-			margin-block-end: var(--spacing-32, 2rem);
+			margin-block-end: clamp(1rem, 3vw, var(--spacing-32, 2rem));
+
+			h1 {
+				/* Prominent on mobile without overflowing narrow viewports */
+				font-size: clamp(2.35rem, 8.5vw, var(--fs-step-11));
+				line-height: 1.05;
+				overflow-wrap: break-word;
+				word-break: auto-phrase;
+			}
 
 			span {
 				display: flex;
@@ -80,25 +93,114 @@
 			}
 		}
 
-		img {
-			border-radius: 1.5rem;
-		}
-
-		.studio-story__picture {
-			margin-block: var(--spacing-48);
-			img {
-				border-radius: 0.5em;
-			}
+		p {
+			font-size: clamp(1.05rem, 2.2vw, var(--fs-step-2));
+			line-height: 1.55;
+			max-width: 48ch;
 		}
 	}
 
+	/* --- Section 1: Our Story (.studio-story) --- */
+	.studio-story {
+		padding-block: clamp(2rem, 5vh, var(--space-stack-md, 2rem))
+			clamp(2.5rem, 6vh, var(--space-stack-lg, 4rem));
+
+		.studio-story__grid {
+			/* Mobile & Tablet: single-column stack, heading above paragraphs */
+			display: flex;
+			flex-direction: column;
+			gap: var(--spacing-24, 1.5rem);
+
+			/* Desktop (1024px+): approved 2-column composition */
+			@media (min-width: 1024px) {
+				display: grid;
+				grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+				gap: clamp(3rem, 5vw, 5rem);
+				align-items: start;
+			}
+		}
+
+		.studio-story__title {
+			max-width: max-content;
+			margin-block-end: clamp(0.75rem, 2vw, var(--spacing-32, 2rem));
+
+			h3 {
+				font-size: clamp(1.35rem, 3.5vw, var(--fs-step-6));
+				line-height: 1.25;
+				text-wrap: balance;
+			}
+
+			span {
+				display: flex;
+				justify-content: flex-end;
+				font-size: var(--fs-step-2);
+				font-family: 'WDXL Lubrifont JP N', sans-serif;
+				font-weight: 400;
+				font-style: normal;
+			}
+		}
+
+		.studio-story__body p {
+			font-size: clamp(1.05rem, 2vw, var(--fs-step-2));
+			line-height: 1.6;
+			max-width: 52ch;
+		}
+	}
+
+	/* --- Section 2: Behind the Studio (.behind-studio) --- */
 	.behind-studio {
-		padding-block: var(--space-stack-md, 2rem) var(--space-stack-lg, 4rem);
-		--kos-gutter: 6rem;
+		padding-block: clamp(2rem, 5vh, var(--space-stack-md, 2rem))
+			clamp(2.5rem, 6vh, var(--space-stack-lg, 4rem));
+		--kos-gutter: clamp(2rem, 4vw, 6rem);
+
+		.behind-studio__grid {
+			/* Mobile (<768px): single-column reading order:
+			   1. つくりて / Behind the studio.
+			   2. Shrine photograph (4:3 landscape crop)
+			   3. Existing biography paragraphs */
+			display: flex;
+			flex-direction: column;
+			gap: 0;
+
+			/* Tablet (768px-1023px): proportional 2-column editorial */
+			@media (min-width: 768px) and (max-width: 1023px) {
+				display: grid;
+				grid-template-columns: minmax(18rem, 1fr) minmax(20rem, 1.25fr);
+				grid-template-areas:
+					"picture header"
+					"picture bio";
+				column-gap: clamp(2rem, 3.5vw, 3rem);
+				row-gap: var(--spacing-24, 1.5rem);
+				align-items: start;
+			}
+
+			/* Desktop (1024px+): approved 2-column composition with shrine on left */
+			@media (min-width: 1024px) {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				grid-template-areas:
+					"picture header"
+					"picture bio";
+				column-gap: var(--kos-gutter, 6rem);
+				row-gap: var(--spacing-24, 1.5rem);
+				align-items: start;
+			}
+		}
+
+		.behind-studio__header {
+			@media (min-width: 768px) {
+				grid-area: header;
+			}
+		}
 
 		.behind-studio__title {
 			max-width: max-content;
-			margin-block-end: var(--spacing-32, 2rem);
+			margin-block-end: clamp(1rem, 2.5vw, var(--spacing-32, 2rem));
+
+			h3 {
+				font-size: clamp(1.5rem, 4vw, var(--fs-step-6));
+				line-height: 1.2;
+			}
 
 			span {
 				display: flex;
@@ -111,11 +213,107 @@
 		}
 
 		.behind-studio__picture {
+			@media (min-width: 768px) {
+				grid-area: picture;
+			}
+
+			display: flex;
+			flex-direction: column;
+			margin: 0;
+
 			img {
 				border-radius: 0.5em;
-				aspect-ratio: 3/4;
+				width: 100%;
 				object-fit: cover;
+				display: block;
+
+				/* Mobile (below 768px): landscape image crop around 4:3 */
+				aspect-ratio: 4 / 3;
+				margin-block-start: var(--spacing-16, 1rem);
+
+				/* Tablet & Desktop: Option A - Balanced 4:5 portrait capped to bio height */
+				@media (min-width: 768px) {
+					aspect-ratio: 4 / 5;
+					max-height: 32rem;
+					object-position: left center;
+					margin-block-start: 0;
+				}
 			}
+
+			.behind-studio__caption {
+				display: flex;
+				justify-content: space-between;
+				align-items: baseline;
+				font-family: 'Space Grotesk', sans-serif;
+				font-size: clamp(0.6875rem, 1.8vw, 0.75rem);
+				letter-spacing: 0.08em;
+				text-transform: uppercase;
+				color: #777;
+				opacity: 0.6;
+				padding-block-start: 0.625rem;
+				margin-block-end: var(--spacing-24, 1.5rem);
+
+				@media (min-width: 768px) {
+					margin-block-end: 0;
+				}
+			}
+		}
+
+		.behind-studio__bio {
+			@media (min-width: 768px) {
+				grid-area: bio;
+			}
+
+			p {
+				font-size: clamp(1.05rem, 2vw, var(--fs-step-2));
+				line-height: 1.6;
+				max-width: 48ch;
+			}
+		}
+	}
+
+	/* --- Section 3: Start Your Story (.conversion) --- */
+	.conversion.container {
+		padding-block: clamp(2.5rem, 6vh, var(--space-stack-lg, 6rem));
+
+		.conversion__title {
+			max-width: max-content;
+			margin-block-end: clamp(1.25rem, 3vw, var(--spacing-64, 4rem));
+
+			h2 {
+				font-size: clamp(2rem, 7vw, var(--fs-step-9));
+				line-height: 1.1;
+				overflow-wrap: break-word;
+			}
+
+			span {
+				display: flex;
+				justify-content: flex-end;
+				font-size: var(--fs-step-2);
+				font-family: 'WDXL Lubrifont JP N', sans-serif;
+				font-weight: 400;
+				font-style: normal;
+			}
+		}
+
+		p {
+			font-size: clamp(1.05rem, 2.2vw, var(--fs-step-2));
+			line-height: 1.55;
+			max-width: 50ch;
+		}
+
+		.btn-wrapper {
+			margin-top: clamp(1.25rem, 2.5vh, 2rem);
+		}
+	}
+
+	/* --- Section Dividers (.decoration) --- */
+	.decoration {
+		padding-block-end: clamp(1rem, 3vh, var(--space-stack-md, 4rem));
+
+		.decoration__text__end p {
+			font-size: clamp(0.6875rem, 2.2vw, var(--fs-step-0));
+			word-break: break-word;
 		}
 	}
 }
