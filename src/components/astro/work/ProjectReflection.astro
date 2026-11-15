@@ -1,0 +1,58 @@
+---
+export interface Props {
+	japaneseWatermark?: string;
+	japaneseTitle?: string;
+	eyebrow?: string;
+	title?: string;
+	quote?: string;
+	signature?: string;
+}
+
+const {
+	japaneseWatermark = '永遠',
+	japaneseTitle,
+	eyebrow = 'REFLECTION',
+	title = 'Retrospective & Longevity',
+	quote,
+	signature = 'STUDIO EIEN ⟡ CRAFT & REFLECTION',
+} = Astro.props;
+---
+
+<section class='cs-reflection' aria-label='Project Reflection'>
+	<div class='container cs-reflection__container' data-type='narrow'>
+		{japaneseWatermark && <span class='cs-reflection__watermark jp-text'>{japaneseWatermark}</span>}
+
+		<div class='cs-reflection__content flow'>
+			<div class='cs-reflection__title-wrapper'>
+				{japaneseTitle && <span class='cs-title__jp text-accent'>{japaneseTitle}</span>}
+				{title && <h2 class='cs-reflection__title'>{title}</h2>}
+			</div>
+			{eyebrow && <span class='cs-reflection__eyebrow'>{eyebrow}</span>}
+
+			{
+				quote && (
+					<blockquote class='cs-reflection__quote'>
+						<p>&ldquo;{quote}&rdquo;</p>
+					</blockquote>
+				)
+			}
+
+			<div class='cs-reflection__body flow'>
+				<slot />
+			</div>
+		</div>
+	</div>
+
+	{
+		signature && (
+			<div class='decoration' data-type='full-bleed'>
+				<div class='container' data-type='full-bleed'>
+					<hr />
+					<div class='decoration__text__end'>
+						<p>{signature}</p>
+					</div>
+				</div>
+			</div>
+		)
+	}
+</section>

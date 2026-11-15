@@ -1,0 +1,41 @@
+---
+export interface Props {
+	image: string;
+	alt?: string;
+	caption?: string;
+	figNumber?: string;
+	fullBleed?: boolean;
+	aspectRatio?: string;
+	toneOverlay?: 'none' | 'dots' | 'lines' | 'cross';
+}
+
+const {
+	image,
+	alt = 'Studio Eien Case Study Visual Specimen',
+	caption,
+	figNumber = 'FIG. 01',
+	fullBleed = false,
+	aspectRatio = '16/9',
+	toneOverlay = 'none',
+} = Astro.props;
+
+const toneClass = toneOverlay !== 'none' ? `tone--${toneOverlay}` : '';
+---
+
+<figure class={`cs-visual ${fullBleed ? 'cs-visual--full-bleed' : ''}`}>
+	<div class='container' data-type={fullBleed ? 'full-bleed' : 'wide'}>
+		<div
+			class={`cs-visual__frame ${toneClass}`}
+			style={`--aspect: ${aspectRatio};`}
+		>
+			<img src={image} alt={alt} class='cs-visual__img' loading='lazy' />
+		</div>
+
+		{(caption || figNumber) && (
+			<figcaption class='cs-visual__caption'>
+				<span class='cs-visual__fig'>{figNumber} — EIEN ARCHIVE</span>
+				{caption && <span class='cs-visual__desc'>{caption}</span>}
+			</figcaption>
+		)}
+	</div>
+</figure>

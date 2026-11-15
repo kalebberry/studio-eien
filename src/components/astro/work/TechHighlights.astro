@@ -1,0 +1,84 @@
+---
+export interface HighlightItem {
+	number: string;
+	title: string;
+	subtitle?: string;
+	description: string;
+	codeSnippet?: string;
+	tags?: string[];
+}
+
+export interface Props {
+	eyebrow?: string;
+	japaneseTitle?: string;
+	title?: string;
+	summary?: string;
+	items: HighlightItem[];
+	signature?: string;
+}
+
+const {
+	eyebrow,
+	japaneseTitle,
+	title = 'Systems & Architecture',
+	summary,
+	items,
+	signature = 'SECTION: ENGINEERING ⟡ ARCHITECTURE V.01',
+} = Astro.props;
+---
+
+<section class='cs-highlights' aria-label='Engineering and Design Highlights'>
+	<div class='container' data-type='wide'>
+		<header class='cs-highlights__header flow'>
+			<div class='cs-highlights__title-wrapper'>
+				{japaneseTitle && <span class='cs-title__jp text-accent'>{japaneseTitle}</span>}
+				<h2 class='cs-highlights__title'>{title}</h2>
+			</div>
+			{eyebrow && <span class='cs-highlights__eyebrow'>{eyebrow}</span>}
+			{summary && <p class='cs-highlights__summary'>{summary}</p>}
+		</header>
+
+		<div class='cs-highlights__grid'>
+			{
+				items.map((item) => (
+					<article class='cs-highlights__card'>
+						<div class='cs-highlights__meta'>
+							<span class='cs-highlights__num'>{item.number}</span>
+							{item.tags && item.tags.length > 0 && (
+								<div class='cs-highlights__tags'>
+									{item.tags.map((t) => (
+										<span class='cs-highlights__tag'>{t}</span>
+									))}
+								</div>
+							)}
+						</div>
+
+						<div class='cs-highlights__body flow'>
+							<h3 class='cs-highlights__card-title'>{item.title}</h3>
+							{item.subtitle && <p class='cs-highlights__subtitle'>{item.subtitle}</p>}
+							<p class='cs-highlights__desc'>{item.description}</p>
+							{item.codeSnippet && (
+								<pre class='cs-highlights__code'>
+									<code>{item.codeSnippet}</code>
+								</pre>
+							)}
+						</div>
+					</article>
+				))
+			}
+		</div>
+	</div>
+
+	{
+		signature && (
+			<div class='decoration' data-type='full-bleed'>
+				<div class='container' data-type='full-bleed'>
+					<hr />
+					<div class='decoration__text__end'>
+						<p>{signature}</p>
+					</div>
+				</div>
+			</div>
+		)
+	}
+</section>

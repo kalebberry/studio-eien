@@ -1,0 +1,84 @@
+@layer pages {
+	.case-study-page {
+		min-height: 100vh;
+		display: flex;
+		flex-direction: column;
+	}
+
+	/* Refined Breadcrumb Bar with clear touch targets & elegant typography */
+	.cs-breadcrumb {
+		padding-block: clamp(0.75rem, 2vh, 1.25rem);
+		border-bottom: 1px solid color-mix(in oklch, var(--text) 8%, transparent);
+		margin-bottom: clamp(1rem, 2.5vh, 2rem);
+
+		.container {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			flex-wrap: wrap;
+			gap: 0.5rem 1rem;
+		}
+
+		.cs-breadcrumb__link {
+			display: inline-flex;
+			align-items: center;
+			gap: 0.5rem;
+			font-size: var(--fs-step-00);
+			text-transform: uppercase;
+			letter-spacing: 0.1em;
+			color: var(--muted, #6f6f6f);
+			text-decoration: none;
+			font-weight: 500;
+			transition: color 0.2s ease;
+
+			&:hover {
+				color: var(--text);
+			}
+
+			span[aria-hidden='true'] {
+				transition: transform 0.2s ease;
+			}
+
+			&:hover span[aria-hidden='true'] {
+				transform: translateX(-3px);
+			}
+		}
+
+		.cs-breadcrumb__current {
+			font-size: var(--fs-step-000);
+			text-transform: uppercase;
+			letter-spacing: 0.12em;
+			color: var(--muted, #6f6f6f);
+			opacity: 0.7;
+		}
+	}
+
+	/* Print style optimizations */
+	@media print {
+		.cs-breadcrumb,
+		.cs-next,
+		nav.nav,
+		footer.footer {
+			display: none !important;
+		}
+
+		.cs-hero,
+		.cs-section,
+		.cs-highlights,
+		.cs-reflection {
+			page-break-inside: avoid;
+			padding-block: 2rem !important;
+		}
+	}
+
+	/* Respect reduced motion across all case study components */
+	@media (prefers-reduced-motion: reduce) {
+		.cs-next__card,
+		.cs-next__preview img,
+		.cs-gallery__frame img,
+		.cs-breadcrumb__link span[aria-hidden='true'] {
+			transition: none !important;
+			transform: none !important;
+		}
+	}
+}

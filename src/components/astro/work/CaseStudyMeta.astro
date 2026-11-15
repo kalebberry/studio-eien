@@ -1,0 +1,64 @@
+---
+export interface Props {
+	client: string;
+	year: string;
+	roles: string[];
+	deliverables?: string[];
+	liveUrl?: string;
+	repoUrl?: string;
+}
+
+const { client, year, roles, deliverables = [], liveUrl, repoUrl } = Astro.props;
+---
+
+<section class='cs-meta' aria-label='Project Metadata'>
+	<div class='container' data-type='wide'>
+		<div class='cs-meta__grid'>
+			<div class='cs-meta__item'>
+				<span class='cs-meta__label'>Context & Client</span>
+				<p class='cs-meta__value'>{client}</p>
+			</div>
+
+			<div class='cs-meta__item'>
+				<span class='cs-meta__label'>Timeline / Year</span>
+				<p class='cs-meta__value'>{year}</p>
+			</div>
+
+			<div class='cs-meta__item'>
+				<span class='cs-meta__label'>Disciplines & Craft</span>
+				<ul class='cs-meta__list' role='list'>
+					{roles.map((r) => <li class='cs-meta__value'>{r}</li>)}
+				</ul>
+			</div>
+
+			{deliverables.length > 0 && (
+				<div class='cs-meta__item'>
+					<span class='cs-meta__label'>Key Deliverables</span>
+					<ul class='cs-meta__list' role='list'>
+						{deliverables.map((d) => <li class='cs-meta__value'>{d}</li>)}
+					</ul>
+				</div>
+			)}
+
+			{(liveUrl || repoUrl) && (
+				<div class='cs-meta__item'>
+					<span class='cs-meta__label'>Artifact Access</span>
+					<div class='cs-meta__links'>
+						{liveUrl && (
+							<a href={liveUrl} target='_blank' rel='noopener noreferrer' class='cs-meta__link'>
+								Live Environment
+								<span aria-hidden='true'>↗</span>
+							</a>
+						)}
+						{repoUrl && (
+							<a href={repoUrl} target='_blank' rel='noopener noreferrer' class='cs-meta__link'>
+								Source Repository
+								<span aria-hidden='true'>↗</span>
+							</a>
+						)}
+					</div>
+				</div>
+			)}
+		</div>
+	</div>
+</section>

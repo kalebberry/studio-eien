@@ -1,0 +1,59 @@
+---
+export interface Props {
+	eyebrow?: string;
+	japaneseTitle?: string;
+	title?: string;
+	lead?: string;
+	layout?: 'single' | 'asymmetric';
+	signature?: string;
+}
+
+const { eyebrow, japaneseTitle, title, lead, layout = 'asymmetric', signature } = Astro.props;
+---
+
+<section class={`cs-section cs-section--${layout}`}>
+	<div class='container' data-type={layout === 'single' ? 'narrow' : 'wide'}>
+		{
+			layout === 'single' ? (
+				<div class='cs-section__single flow'>
+					<div class='cs-section__title-wrapper'>
+						{japaneseTitle && <span class='cs-title__jp text-accent'>{japaneseTitle}</span>}
+						{title && <h2 class='cs-section__title'>{title}</h2>}
+					</div>
+					{eyebrow && <span class='cs-section__eyebrow'>{eyebrow}</span>}
+					{lead && <p class='cs-section__lead'>{lead}</p>}
+					<div class='cs-section__body flow'>
+						<slot />
+					</div>
+				</div>
+			) : (
+				<div class='cs-section__grid'>
+					<header class='cs-section__aside flow'>
+						<div class='cs-section__title-wrapper'>
+							{japaneseTitle && <span class='cs-title__jp text-accent'>{japaneseTitle}</span>}
+							{title && <h2 class='cs-section__title'>{title}</h2>}
+						</div>
+						{eyebrow && <span class='cs-section__eyebrow'>{eyebrow}</span>}
+						{lead && <blockquote class='cs-section__callout'>{lead}</blockquote>}
+					</header>
+					<div class='cs-section__content flow'>
+						<slot />
+					</div>
+				</div>
+			)
+		}
+	</div>
+
+	{
+		signature && (
+			<div class='decoration' data-type='full-bleed'>
+				<div class='container' data-type='full-bleed'>
+					<hr />
+					<div class='decoration__text__end'>
+						<p>{signature}</p>
+					</div>
+				</div>
+			</div>
+		)
+	}
+</section>

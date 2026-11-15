@@ -1,0 +1,63 @@
+---
+export interface GalleryItem {
+	image: string;
+	alt?: string;
+	caption?: string;
+	figNumber?: string;
+	span?: number; // 1-12 in Koshi Grid
+}
+
+export interface Props {
+	items: GalleryItem[];
+	eyebrow?: string;
+	japaneseTitle?: string;
+	title?: string;
+	ratio?: '7-5' | '5-7' | '6-6' | '8-4';
+}
+
+const { items, eyebrow, japaneseTitle, title, ratio = '7-5' } = Astro.props;
+
+// Determine spans if not explicitly specified on items
+function getSpan(index: number): number {
+	if (items[index]?.span) return items[index].span!;
+	if (ratio === '7-5') return index % 2 === 0 ? 7 : 5;
+	if (ratio === '5-7') return index % 2 === 0 ? 5 : 7;
+	if (ratio === '8-4') return index % 2 === 0 ? 8 : 4;
+	return 6;
+}
+---
+
+<section class='cs-gallery' aria-label={title || 'Visual Gallery'}>
+	<div class='container' data-type='wide'>
+		{(eyebrow || title || japaneseTitle) && (
+			<header class='cs-gallery__header'>
+				<div class='cs-gallery__title-wrapper'>
+					{japaneseTitle && <span class='cs-title__jp text-accent'>{japaneseTitle}</span>}
+					{title && <h3 class='cs-gallery__title'>{title}</h3>}
+				</div>
+				{eyebrow && <span class='cs-gallery__eyebrow'>{eyebrow}</span>}
+			</header>
+		)}
+
+		<div class='kos-grid cs-gallery__grid' kos-cols='12'>
+			{
+				items.map((item, idx) => {
+					const span = getSpan(idx);
+					return (
+						<figure class='cs-gallery__item' kos-col-span={span.toString()}>
+							<div class='cs-gallery__frame'>
+								<img src={item.image} alt={item.alt || `Specimen ${idx + 1}`} loading='lazy' />
+							</div>
+							{(item.figNumber || item.caption) && (
+								<figcaption class='cs-gallery__caption'>
+									{item.figNumber && <span class='cs-gallery__fig'>{item.figNumber}</span>}
+									{item.caption && <span class='cs-gallery__desc'>{item.caption}</span>}
+								</figcaption>
+							)}
+						</figure>
+					);
+				})
+			}
+		</div>
+	</div>
+</section>

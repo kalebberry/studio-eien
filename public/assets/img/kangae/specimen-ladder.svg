@@ -1,0 +1,122 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 680" width="840" height="680">
+  <defs>
+    <style>
+      .bg { fill: #FFFFFF; }
+      .border { stroke: #D6D2C9; stroke-width: 1.5; fill: none; }
+      .meta { font-family: 'Space Grotesk', monospace, sans-serif; font-size: 13px; font-weight: 700; fill: #55534E; letter-spacing: 0.16em; text-transform: uppercase; }
+      .title { font-family: 'Familjen Grotesk', -apple-system, sans-serif; font-size: 28px; font-weight: 700; fill: #111111; letter-spacing: -0.02em; }
+      .subtitle { font-family: 'Fira Sans', -apple-system, sans-serif; font-size: 14.5px; fill: #4A4744; }
+      .step-card { fill: #FAF9F6; stroke: #D6D2C9; stroke-width: 1.5; rx: 6px; }
+      .badge-black { fill: #111111; rx: 3px; }
+      .badge-black-text { font-family: 'Space Grotesk', monospace, sans-serif; font-size: 11.5px; font-weight: 700; fill: #FFFFFF; letter-spacing: 0.08em; }
+      .badge-outline { fill: #EAE7E0; stroke: #C8C4BA; stroke-width: 1; rx: 3px; }
+      .badge-outline-text { font-family: 'Space Grotesk', monospace, sans-serif; font-size: 10.5px; font-weight: 700; fill: #222222; letter-spacing: 0.08em; }
+      .step-name { font-family: 'Familjen Grotesk', -apple-system, sans-serif; font-size: 20px; font-weight: 700; fill: #111111; }
+      .step-desc { font-family: 'Fira Sans', -apple-system, sans-serif; font-size: 15px; fill: #1E1C1A; }
+      .loop-box { fill: #FAF9F6; stroke: #C8C4BA; stroke-width: 1.5; rx: 6px; }
+      .loop-label { font-family: 'Space Grotesk', monospace, sans-serif; font-size: 12px; font-weight: 700; fill: #4A4744; letter-spacing: 0.12em; }
+      .loop-flow { font-family: 'Space Grotesk', monospace, sans-serif; font-size: 16px; font-weight: 700; fill: #111111; letter-spacing: 0.06em; }
+      .loop-desc { font-family: 'Fira Sans', -apple-system, sans-serif; font-size: 14.5px; fill: #222222; }
+    </style>
+  </defs>
+
+  <!-- Canvas Background -->
+  <rect width="840" height="680" class="bg" />
+  <rect x="1" y="1" width="838" height="678" class="border" />
+
+  <!-- Broadsheet Header -->
+  <g transform="translate(42, 44)">
+    <text x="0" y="0" class="meta">KANGAE WORKFLOW PROTOCOL // SPECIMEN A</text>
+    <text x="0" y="32" class="title">THE INTERNAL ASSISTANCE LADDER</text>
+    <text x="0" y="56" class="subtitle">GRADUATED GUIDANCE WITHOUT MANUAL ASSISTANCE TOGGLES</text>
+  </g>
+
+  <!-- 6 Step Cards: 2 Columns of 3 Cards -->
+  <!-- Left Column (Levels 01 - 03) -->
+  <g transform="translate(42, 134)">
+    <!-- Level 01 -->
+    <g transform="translate(0, 0)">
+      <rect width="366" height="114" class="step-card" />
+      <rect x="18" y="16" width="76" height="24" class="badge-black" />
+      <text x="27" y="32" class="badge-black-text">LEVEL 01</text>
+      <text x="104" y="34" class="step-name">QUESTION</text>
+      <rect x="272" y="16" width="78" height="22" class="badge-outline" />
+      <text x="279" y="31" class="badge-outline-text">LEAST HELP</text>
+      <text x="18" y="68" class="step-desc">Targeted inquiry to clarify assumptions and hypotheses</text>
+      <text x="18" y="90" class="step-desc">before suggesting code modifications.</text>
+    </g>
+
+    <!-- Level 02 -->
+    <g transform="translate(0, 128)">
+      <rect width="366" height="114" class="step-card" />
+      <rect x="18" y="16" width="76" height="24" class="badge-black" />
+      <text x="27" y="32" class="badge-black-text">LEVEL 02</text>
+      <text x="104" y="34" class="step-name">HINT</text>
+      <text x="18" y="68" class="step-desc">Points toward relevant concepts, documentation,</text>
+      <text x="18" y="90" class="step-desc">or suspicious lines of code to investigate.</text>
+    </g>
+
+    <!-- Level 03 -->
+    <g transform="translate(0, 256)">
+      <rect width="366" height="114" class="step-card" />
+      <rect x="18" y="16" width="76" height="24" class="badge-black" />
+      <text x="27" y="32" class="badge-black-text">LEVEL 03</text>
+      <text x="104" y="34" class="step-name">EXPLANATION</text>
+      <text x="18" y="68" class="step-desc">Explains the underlying runtime mechanism or rule</text>
+      <text x="18" y="90" class="step-desc">without providing the ready-made solution.</text>
+    </g>
+  </g>
+
+  <!-- Right Column (Levels 04 - 06) -->
+  <g transform="translate(432, 134)">
+    <!-- Level 04 -->
+    <g transform="translate(0, 0)">
+      <rect width="366" height="114" class="step-card" />
+      <rect x="18" y="16" width="76" height="24" class="badge-black" />
+      <text x="27" y="32" class="badge-black-text">LEVEL 04</text>
+      <text x="104" y="34" class="step-name">STRUCTURE</text>
+      <text x="18" y="68" class="step-desc">Provides pseudocode, an algorithmic outline, or</text>
+      <text x="18" y="90" class="step-desc">architecture for the developer to implement.</text>
+    </g>
+
+    <!-- Level 05 -->
+    <g transform="translate(0, 128)">
+      <rect width="366" height="114" class="step-card" />
+      <rect x="18" y="16" width="76" height="24" class="badge-black" />
+      <text x="27" y="32" class="badge-black-text">LEVEL 05</text>
+      <text x="104" y="34" class="step-name">EXAMPLE</text>
+      <text x="18" y="68" class="step-desc">Shows an isolated, minimal demonstration of the</text>
+      <text x="18" y="90" class="step-desc">pattern applied in a separate scenario.</text>
+    </g>
+
+    <!-- Level 06 -->
+    <g transform="translate(0, 256)">
+      <rect width="366" height="114" class="step-card" style="stroke: #33312E;" />
+      <rect x="18" y="16" width="76" height="24" class="badge-black" />
+      <text x="27" y="32" class="badge-black-text">LEVEL 06</text>
+      <text x="104" y="34" class="step-name">SOLUTION</text>
+      <rect x="274" y="16" width="76" height="22" class="badge-black" />
+      <text x="281" y="31" class="badge-black-text" style="font-size: 10.5px;">FALLBACK</text>
+      <text x="18" y="68" class="step-desc">Provides the complete solution when lower levels</text>
+      <text x="18" y="90" class="step-desc">are insufficient or the developer is blocked.</text>
+    </g>
+  </g>
+
+  <!-- The Return Control Loop Banner -->
+  <g transform="translate(42, 524)">
+    <rect width="756" height="112" class="loop-box" />
+    <text x="26" y="30" class="loop-label">GOVERNING PRINCIPLE // THE RETURN-CONTROL PROTOCOL</text>
+    <text x="26" y="66" class="loop-flow">
+      <tspan fill="#55534E">STRUGGLE</tspan>
+      <tspan fill="#111111">  ➔  </tspan>
+      <tspan fill="#111111">ASSIST</tspan>
+      <tspan fill="#111111">  ➔  </tspan>
+      <tspan fill="#111111">UNDERSTAND</tspan>
+      <tspan fill="#111111">  ➔  </tspan>
+      <tspan fill="#111111" text-decoration="underline">RETURN CONTROL</tspan>
+    </text>
+    <text x="26" y="94" class="loop-desc">
+      The assistant offers the smallest nudge likely to unblock; control returns as soon as understanding is demonstrated.
+    </text>
+  </g>
+</svg>

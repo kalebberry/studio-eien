@@ -1,0 +1,74 @@
+---
+export interface Props {
+	nextSlug: string;
+	nextTitle: string;
+	nextTagline?: string;
+	nextThumbnail?: string;
+	nextJapaneseTitle?: string;
+	allWorkUrl?: string;
+}
+
+const {
+	nextSlug,
+	nextTitle,
+	nextTagline,
+	nextThumbnail,
+	nextJapaneseTitle = '次へ',
+	allWorkUrl = '/work',
+} = Astro.props;
+
+const nextHref = `/work/${nextSlug}`;
+---
+
+<nav class='cs-next' aria-label='Next Case Study Navigation'>
+	<div class='container' data-type='wide'>
+		<div class='cs-next__header'>
+			<span class='cs-next__label'>CONTINUE READING</span>
+			<a href={allWorkUrl} class='cs-next__all-link'>
+				<span>Index of Projects</span>
+				<span aria-hidden='true'>↗</span>
+			</a>
+		</div>
+
+		<a href={nextHref} class='cs-next__card'>
+			<div class='cs-next__card-content'>
+				<span class='cs-next__hint'>NEXT CASE STUDY</span>
+
+				<div class='cs-next__title-wrapper'>
+					{nextJapaneseTitle && <span class='cs-title__jp text-accent'>{nextJapaneseTitle}</span>}
+					<h3 class='cs-next__title'>{nextTitle}</h3>
+				</div>
+
+				{nextTagline && <p class='cs-next__tagline'>{nextTagline}</p>}
+
+				<span class='cs-next__cta'>
+					View Case Study
+					<svg
+						xmlns='http://www.w3.org/2000/svg'
+						width='1.2em'
+						height='1.2em'
+						viewBox='0 0 24 24'
+						fill='none'
+						stroke='currentColor'
+						stroke-width='2'
+						stroke-linecap='round'
+						stroke-linejoin='round'
+						aria-hidden='true'
+					>
+						<line x1='5' y1='12' x2='19' y2='12'></line>
+						<polyline points='12 5 19 12 12 19'></polyline>
+					</svg>
+				</span>
+			</div>
+
+			{
+				nextThumbnail && (
+					<div class='cs-next__preview'>
+						<img src={nextThumbnail} alt={`Preview of ${nextTitle}`} loading='lazy' />
+						<div class='cs-next__overlay' />
+					</div>
+				)
+			}
+		</a>
+	</div>
+</nav>

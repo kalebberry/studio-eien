@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 560" width="840" height="560">
+  <defs>
+    <style>
+      .bg { fill: #FFFFFF; }
+      .border { stroke: #D6D2C9; stroke-width: 1.5; fill: none; }
+      .inner-line { stroke: #EAE7E0; stroke-width: 1; fill: none; }
+      .meta { font-family: 'Space Grotesk', monospace, sans-serif; font-size: 12.5px; font-weight: 700; fill: #6E6B66; letter-spacing: 0.16em; text-transform: uppercase; }
+      .meta-right { font-family: 'Space Grotesk', monospace, sans-serif; font-size: 12px; font-weight: 700; fill: #8E8B85; letter-spacing: 0.14em; text-anchor: end; }
+      .stamp-box { fill: #FAF9F6; stroke: #2B2926; stroke-width: 1.5; rx: 4px; }
+      .stamp-text { font-family: 'WDXL Lubrifont JP N', sans-serif; font-size: 44px; fill: #111111; text-anchor: middle; }
+      .sub-eyebrow { font-family: 'Space Grotesk', monospace, sans-serif; font-size: 12px; font-weight: 700; fill: #6E6B66; letter-spacing: 0.14em; }
+      .sub-title { font-family: 'Space Grotesk', monospace, sans-serif; font-size: 14.5px; font-weight: 600; fill: #2B2926; letter-spacing: 0.04em; }
+      .headline { font-family: 'Familjen Grotesk', -apple-system, sans-serif; font-size: 54px; font-weight: 700; fill: #111111; letter-spacing: -0.03em; line-height: 1.05; }
+      .body-serif { font-family: 'PT Serif', Georgia, serif; font-style: italic; font-size: 18.5px; fill: #2B2926; }
+      .foot-meta { font-family: 'Space Grotesk', monospace, sans-serif; font-size: 11.5px; font-weight: 700; fill: #8E8B85; letter-spacing: 0.12em; }
+      .foot-right { font-family: 'Space Grotesk', monospace, sans-serif; font-size: 11.5px; font-weight: 700; fill: #111111; letter-spacing: 0.1em; text-anchor: end; }
+      .cross { stroke: #B8B4AA; stroke-width: 1; }
+    </style>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="840" height="560" class="bg" />
+  <rect x="1" y="1" width="838" height="558" class="border" />
+  <rect x="24" y="24" width="792" height="512" class="inner-line" />
+
+  <!-- Architectural Corner Registry Marks -->
+  <g class="cross">
+    <line x1="30" y1="36" x2="42" y2="36" />
+    <line x1="36" y1="30" x2="36" y2="42" />
+    <line x1="798" y1="36" x2="810" y2="36" />
+    <line x1="804" y1="30" x2="804" y2="42" />
+    <line x1="30" y1="524" x2="42" y2="524" />
+    <line x1="36" y1="518" x2="36" y2="530" />
+    <line x1="798" y1="524" x2="810" y2="524" />
+    <line x1="804" y1="518" x2="804" y2="530" />
+  </g>
+
+  <!-- Broadsheet Header -->
+  <text x="48" y="64" class="meta">KANGAE WORKFLOW PHILOSOPHY // SPECIMEN A</text>
+  <text x="792" y="64" class="meta-right">EDITION 2026 // TOKYO</text>
+  <line x1="48" y1="80" x2="792" y2="80" class="inner-line" />
+
+  <!-- Japanese Kanji Stamp & Meta Label -->
+  <g transform="translate(48, 108)">
+    <rect width="72" height="72" class="stamp-box" />
+    <text x="36" y="52" class="stamp-text">考え</text>
+  </g>
+  <text x="136" y="136" class="sub-eyebrow">CORE GOVERNING PRINCIPLE</text>
+  <text x="136" y="164" class="sub-title">HUMAN AGENCY &amp; COGNITIVE OWNERSHIP</text>
+
+  <!-- Bold Central Typographic Manifesto -->
+  <text x="48" y="258" class="headline">THINK WITH AI,</text>
+  <text x="48" y="320" class="headline">NOT THROUGH AI.</text>
+
+  <!-- Editorial Subtext -->
+  <text x="48" y="380" class="body-serif">Assistance should remove the friction that wastes attention,</text>
+  <text x="48" y="410" class="body-serif">not the friction that cultivates engineering capability.</text>
+
+  <!-- Footer Information Strip -->
+  <line x1="48" y1="468" x2="792" y2="468" class="inner-line" />
+  <text x="48" y="498" class="foot-meta">STUDIO EIEN RESEARCH // ARCHIVAL SPECIMEN</text>
+  <text x="792" y="498" class="foot-right">01 / MANIFESTO</text>
+</svg>

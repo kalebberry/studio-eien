@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 660" width="1200" height="660">
+  <defs>
+    <style>
+      .bg { fill: #FFFFFF; }
+      .border { stroke: #D6D2C9; stroke-width: 1.5; fill: none; }
+      .meta { font-family: 'Space Grotesk', monospace, sans-serif; font-size: 13px; font-weight: 700; fill: #55534E; letter-spacing: 0.16em; text-transform: uppercase; }
+      .title { font-family: 'Familjen Grotesk', -apple-system, sans-serif; font-size: 28px; font-weight: 700; fill: #111111; letter-spacing: -0.02em; }
+      .subtitle { font-family: 'Fira Sans', -apple-system, sans-serif; font-size: 14.5px; fill: #4A4744; }
+      .col-box { fill: #FAF9F6; stroke: #D6D2C9; stroke-width: 1.5; rx: 6px; }
+      .col-header { font-family: 'Space Grotesk', monospace, sans-serif; font-size: 13px; font-weight: 700; fill: #111111; letter-spacing: 0.08em; }
+      .divider { stroke: #D6D2C9; stroke-width: 1.5; }
+      .code-line { font-family: 'Space Grotesk', monospace, sans-serif; font-size: 14.5px; fill: #1F1E1D; }
+      .code-dim { fill: #55534E; font-size: 13.5px; }
+      .code-bold { font-weight: 700; fill: #111111; }
+      .entry-label { font-family: 'Space Grotesk', monospace, sans-serif; font-size: 12px; font-weight: 700; fill: #55534E; letter-spacing: 0.1em; }
+      .entry-val { font-family: 'Fira Sans', -apple-system, sans-serif; font-size: 15.5px; fill: #1F1E1D; }
+      .entry-bold { font-weight: 700; fill: #111111; font-size: 16px; }
+    </style>
+  </defs>
+
+  <!-- Canvas Background -->
+  <rect width="1200" height="660" class="bg" />
+  <rect x="1" y="1" width="1198" height="658" class="border" />
+
+  <!-- Broadsheet Header -->
+  <g transform="translate(42, 44)">
+    <text x="0" y="0" class="meta">REPOSITORY ARCHITECTURE &amp; JOURNAL // SPECIMEN C</text>
+    <text x="0" y="32" class="title">PORTABLE STRUCTURE &amp; POST-SESSION REFLECTION</text>
+    <text x="0" y="56" class="subtitle">VENDOR-NEUTRAL MARKDOWN PROTOCOL WITH STRUCTURED REFLECTION SCHEMA</text>
+  </g>
+
+  <!-- Left Column: Folder Tree (510px wide, 490px high) -->
+  <g transform="translate(42, 126)">
+    <rect width="510" height="494" class="col-box" />
+    <text x="26" y="34" class="col-header">01 // PORTABLE .KANGAE/ REPOSITORY STRUCTURE</text>
+    <line x1="26" y1="50" x2="484" y2="50" class="divider" />
+
+    <g transform="translate(26, 88)">
+      <text x="0" y="0" class="code-line"><tspan class="code-bold">.kangae/</tspan></text>
+      <text x="0" y="34" class="code-line">├── <tspan class="code-bold">KANGAE.md</tspan> <tspan class="code-dim"># Core protocol, ladder &amp; fluid contexts</tspan></text>
+      <text x="0" y="68" class="code-line">├── <tspan class="code-bold">JOURNAL-TEMPLATE.md</tspan> <tspan class="code-dim"># Structured reflection schema</tspan></text>
+      <text x="0" y="102" class="code-line">├── <tspan class="code-bold">skills/</tspan> <tspan class="code-dim"># Reusable workflow modules</tspan></text>
+      <text x="0" y="136" class="code-line">│   ├── <tspan class="code-bold">debug-with-me/</tspan> <tspan class="code-dim">SKILL.md (hypothesis-first)</tspan></text>
+      <text x="0" y="170" class="code-line">│   ├── <tspan class="code-bold">review-this/</tspan> <tspan class="code-dim">SKILL.md (chunked PR review)</tspan></text>
+      <text x="0" y="204" class="code-line">│   ├── <tspan class="code-bold">understand-code/</tspan> <tspan class="code-dim">SKILL.md (guided exploration)</tspan></text>
+      <text x="0" y="238" class="code-line">│   ├── <tspan class="code-bold">reconstruct/</tspan> <tspan class="code-dim">SKILL.md (independent re-implementation)</tspan></text>
+      <text x="0" y="272" class="code-line">│   ├── <tspan class="code-bold">teach-me/</tspan> <tspan class="code-dim">SKILL.md (conceptual inquiry)</tspan></text>
+      <text x="0" y="306" class="code-line">│   └── <tspan class="code-bold">journal/</tspan> <tspan class="code-dim">SKILL.md (structured note drafting)</tspan></text>
+      <text x="0" y="340" class="code-line">└── <tspan class="code-dim">icm/ # Optional lifecycle (Understand → Reflect)</tspan></text>
+    </g>
+  </g>
+
+  <!-- Right Column: Engineering Journal Specimen (606px wide, 494px high) -->
+  <g transform="translate(568, 126)">
+    <rect width="590" height="494" class="col-box" />
+    <text x="26" y="34" class="col-header">02 // JOURNAL ENTRY: JOURNAL-TEMPLATE.MD SPECIMEN</text>
+    <line x1="26" y1="50" x2="564" y2="50" class="divider" />
+
+    <g transform="translate(26, 88)">
+      <!-- Item 1: Session & Problem -->
+      <text x="0" y="0" class="entry-label">DATE &amp; PROBLEM</text>
+      <text x="0" y="24" class="entry-val"><tspan class="entry-bold">2026-11-14 // Responsive Grid Track Overflow at 320px</tspan></text>
+
+      <!-- Item 2: Initial Thinking vs Evidence -->
+      <text x="0" y="72" class="entry-label">INITIAL THINKING vs EVIDENCE</text>
+      <text x="0" y="96" class="entry-val">Assumed media query failed. DevTools proved container was 320px,</text>
+      <text x="0" y="120" class="entry-val" style="font-weight: 700; fill: #111111;">but minmax(min-content, 1fr) prevented tracks from shrinking.</text>
+
+      <!-- Item 3: What Changed My Mind -->
+      <text x="0" y="170" class="entry-label">WHAT CHANGED MY MIND &amp; DECISION</text>
+      <text x="0" y="194" class="entry-val">Tested min(100%, 16rem) directly in DevTools before editing CSS.</text>
+      <text x="0" y="218" class="entry-val">Replaced rigid minimums with fluid Utopia clamp tokens.</text>
+
+      <!-- Item 4: Transferable Principle -->
+      <text x="0" y="268" class="entry-label">TRANSFERABLE PRINCIPLE (NEXT TIME)</text>
+      <text x="0" y="292" class="entry-val"><tspan class="entry-bold">Always verify parent container inline-size before adjusting tracks.</tspan></text>
+      <text x="0" y="318" class="code-dim" style="font-size: 14.5px; fill: #4A4744; font-style: italic;">Understanding why the layout failed turns a single bug fix into a permanent lesson.</text>
+    </g>
+  </g>
+</svg>

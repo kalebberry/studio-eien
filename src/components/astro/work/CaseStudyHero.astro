@@ -1,0 +1,56 @@
+---
+export interface Props {
+	title: string;
+	japaneseTitle?: string;
+	subtitle?: string;
+	tagline: string;
+	heroImage: string;
+	heroImageAlt?: string;
+	signature?: string;
+}
+
+const {
+	title,
+	japaneseTitle = '作品',
+	subtitle,
+	tagline,
+	heroImage,
+	heroImageAlt = title,
+	signature = 'SECTION: OVERVIEW ⟡ STUDY V.01',
+} = Astro.props;
+---
+
+<header class='cs-hero'>
+	<div class='container' data-type='wide'>
+		<div class='cs-hero__top'>
+			<div class='cs-hero__brand'>
+				{japaneseTitle && <span class='cs-title__jp text-accent'>{japaneseTitle}</span>}
+				<h1 class='cs-hero__title'>{title}</h1>
+			</div>
+
+			<div class='cs-hero__intro flow'>
+				{subtitle && <p class='cs-hero__subtitle'>{subtitle}</p>}
+				<blockquote class='cs-hero__tagline'>
+					&ldquo;{tagline}&rdquo;
+				</blockquote>
+			</div>
+		</div>
+
+		<div class='cs-hero__frame'>
+			<img src={heroImage} alt={heroImageAlt} class='cs-hero__img' loading='eager' />
+			<div class='cs-hero__caption'>
+				<span class='caption-tag'>EIEN ARCHIVE // {title.toUpperCase()}</span>
+				<span class='caption-date'>FIG. 00 — PRIMARY SPECIMEN</span>
+			</div>
+		</div>
+	</div>
+
+	<div class='decoration' data-type='full-bleed'>
+		<div class='container' data-type='full-bleed'>
+			<hr />
+			<div class='decoration__text__end'>
+				<p>{signature}</p>
+			</div>
+		</div>
+	</div>
+</header>

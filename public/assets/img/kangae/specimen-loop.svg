@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 560" width="600" height="560">
+  <defs>
+    <style>
+      .bg { fill: #FFFFFF; }
+      .border { stroke: #D6D2C9; stroke-width: 1.5; fill: none; }
+      .inner-line { stroke: #EAE7E0; stroke-width: 1; fill: none; }
+      .meta { font-family: 'Space Grotesk', monospace, sans-serif; font-size: 12px; font-weight: 700; fill: #6E6B66; letter-spacing: 0.14em; text-transform: uppercase; }
+      .meta-right { font-family: 'Space Grotesk', monospace, sans-serif; font-size: 11.5px; font-weight: 700; fill: #8E8B85; letter-spacing: 0.1em; text-anchor: end; }
+      .sec-title { font-family: 'Familjen Grotesk', -apple-system, sans-serif; font-size: 21px; font-weight: 700; fill: #111111; letter-spacing: -0.01em; }
+      .card-step { fill: #FAF9F6; stroke: #D6D2C9; stroke-width: 1.5; rx: 6px; }
+      .card-goal { fill: #111111; stroke: #111111; stroke-width: 1.5; rx: 6px; }
+      .step-badge { fill: #111111; rx: 3px; }
+      .step-badge-text { font-family: 'Space Grotesk', monospace, sans-serif; font-size: 11px; font-weight: 700; fill: #FFFFFF; text-anchor: middle; }
+      .step-badge-goal { fill: #FFFFFF; rx: 3px; }
+      .step-badge-goal-text { font-family: 'Space Grotesk', monospace, sans-serif; font-size: 11px; font-weight: 700; fill: #111111; text-anchor: middle; }
+      .step-title { font-family: 'Familjen Grotesk', -apple-system, sans-serif; font-size: 17px; font-weight: 700; fill: #111111; }
+      .step-title-goal { font-family: 'Familjen Grotesk', -apple-system, sans-serif; font-size: 17px; font-weight: 700; fill: #FFFFFF; }
+      .step-desc { font-family: 'Fira Sans', -apple-system, sans-serif; font-size: 13.5px; fill: #4A4744; }
+      .step-desc-goal { font-family: 'Fira Sans', -apple-system, sans-serif; font-size: 13.5px; fill: #D0CCC2; }
+      .tag-box { fill: #EAE7E0; stroke: #C8C4BA; stroke-width: 1; rx: 3px; }
+      .tag-text { font-family: 'Space Grotesk', monospace, sans-serif; font-size: 10px; font-weight: 700; fill: #222222; text-anchor: middle; }
+      .tag-box-goal { fill: #2B2926; stroke: #444240; stroke-width: 1; rx: 3px; }
+      .tag-text-goal { font-family: 'Space Grotesk', monospace, sans-serif; font-size: 10px; font-weight: 700; fill: #FFFFFF; text-anchor: middle; }
+      .arrow { font-family: 'Space Grotesk', monospace, sans-serif; font-size: 15px; font-weight: 700; fill: #111111; text-anchor: middle; }
+      .foot-meta { font-family: 'Space Grotesk', monospace, sans-serif; font-size: 10.5px; font-weight: 700; fill: #6E6B66; letter-spacing: 0.08em; }
+      .cross { stroke: #B8B4AA; stroke-width: 1; }
+    </style>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="600" height="560" class="bg" />
+  <rect x="1" y="1" width="598" height="558" class="border" />
+  <rect x="24" y="24" width="552" height="512" class="inner-line" />
+
+  <!-- Architectural Corner Registry Marks -->
+  <g class="cross">
+    <line x1="30" y1="36" x2="42" y2="36" />
+    <line x1="36" y1="30" x2="36" y2="42" />
+    <line x1="558" y1="36" x2="570" y2="36" />
+    <line x1="564" y1="30" x2="564" y2="42" />
+    <line x1="30" y1="524" x2="42" y2="524" />
+    <line x1="36" y1="518" x2="36" y2="530" />
+    <line x1="558" y1="524" x2="570" y2="524" />
+    <line x1="564" y1="518" x2="564" y2="530" />
+  </g>
+
+  <!-- Broadsheet Header -->
+  <text x="42" y="64" class="meta">THE RETURN-CONTROL LOOP // SPECIMEN B</text>
+  <text x="558" y="64" class="meta-right">PROTOCOL</text>
+  <line x1="42" y1="80" x2="558" y2="80" class="inner-line" />
+
+  <!-- Section Title -->
+  <text x="42" y="112" class="sec-title">FOUR-STEP INTERACTION PROTOCOL</text>
+
+  <!-- Step 01: STRUGGLE -->
+  <g transform="translate(42, 132)">
+    <rect width="516" height="62" class="card-step" />
+    <rect x="14" y="14" width="32" height="22" class="step-badge" />
+    <text x="30" y="29" class="step-badge-text">01</text>
+    <text x="58" y="30" class="step-title">STRUGGLE</text>
+    <text x="58" y="49" class="step-desc">Engage first; form an initial hypothesis</text>
+    <rect x="408" y="14" width="94" height="22" class="tag-box" />
+    <text x="455" y="29" class="tag-text">HUMAN FIRST</text>
+  </g>
+
+  <!-- Flow Arrow 1 -->
+  <text x="72" y="210" class="arrow">↓</text>
+
+  <!-- Step 02: ASSIST -->
+  <g transform="translate(42, 218)">
+    <rect width="516" height="62" class="card-step" />
+    <rect x="14" y="14" width="32" height="22" class="step-badge" />
+    <text x="30" y="29" class="step-badge-text">02</text>
+    <text x="58" y="30" class="step-title">ASSIST</text>
+    <text x="58" y="49" class="step-desc">Smallest nudge likely to unblock you</text>
+    <rect x="408" y="14" width="94" height="22" class="tag-box" />
+    <text x="455" y="29" class="tag-text">LEAST HELP</text>
+  </g>
+
+  <!-- Flow Arrow 2 -->
+  <text x="72" y="296" class="arrow">↓</text>
+
+  <!-- Step 03: UNDERSTAND -->
+  <g transform="translate(42, 304)">
+    <rect width="516" height="62" class="card-step" />
+    <rect x="14" y="14" width="32" height="22" class="step-badge" />
+    <text x="30" y="29" class="step-badge-text">03</text>
+    <text x="58" y="30" class="step-title">UNDERSTAND</text>
+    <text x="58" y="49" class="step-desc">Verify evidence and explain the mechanism</text>
+    <rect x="408" y="14" width="94" height="22" class="tag-box" />
+    <text x="455" y="29" class="tag-text">EVIDENCE</text>
+  </g>
+
+  <!-- Flow Arrow 3 -->
+  <text x="72" y="382" class="arrow">↓</text>
+
+  <!-- Step 04: RETURN CONTROL -->
+  <g transform="translate(42, 390)">
+    <rect width="516" height="62" class="card-goal" />
+    <rect x="14" y="14" width="32" height="22" class="step-badge-goal" />
+    <text x="30" y="29" class="step-badge-goal-text">04</text>
+    <text x="58" y="30" class="step-title-goal">RETURN CONTROL</text>
+    <text x="58" y="49" class="step-desc-goal">Assistant steps back; developer implements</text>
+    <rect x="400" y="14" width="102" height="22" class="tag-box-goal" />
+    <text x="451" y="29" class="tag-text-goal">GOAL STATE</text>
+  </g>
+
+  <!-- Footer Information Strip -->
+  <line x1="42" y1="472" x2="558" y2="472" class="inner-line" />
+  <text x="42" y="500" class="foot-meta">RULE: CONTROL RETURNS ON PROVEN UNDERSTANDING</text>
+  <text x="558" y="500" class="meta-right">02 / PROTOCOL</text>
+</svg>

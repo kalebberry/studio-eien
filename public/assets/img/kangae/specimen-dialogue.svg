@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 680" width="620" height="680">
+  <defs>
+    <style>
+      .bg { fill: #FFFFFF; }
+      .border { stroke: #D6D2C9; stroke-width: 1.5; fill: none; }
+      .meta { font-family: 'Space Grotesk', monospace, sans-serif; font-size: 13px; font-weight: 700; fill: #55534E; letter-spacing: 0.16em; text-transform: uppercase; }
+      .title { font-family: 'Familjen Grotesk', -apple-system, sans-serif; font-size: 28px; font-weight: 700; fill: #111111; letter-spacing: -0.02em; }
+      .subtitle { font-family: 'Fira Sans', -apple-system, sans-serif; font-size: 14.5px; fill: #4A4744; }
+      .dialogue-user { fill: #FFFFFF; stroke: #D6D2C9; stroke-width: 1.5; rx: 6px; }
+      .dialogue-asst { fill: #FAF9F6; stroke: #C8C4BA; stroke-width: 1.5; rx: 6px; }
+      .badge-user { fill: #111111; rx: 3px; }
+      .badge-user-text { font-family: 'Space Grotesk', monospace, sans-serif; font-size: 11.5px; font-weight: 700; fill: #FFFFFF; letter-spacing: 0.08em; }
+      .badge-asst { fill: #EAE7E0; stroke: #C8C4BA; stroke-width: 1; rx: 3px; }
+      .badge-asst-text { font-family: 'Space Grotesk', monospace, sans-serif; font-size: 11.5px; font-weight: 700; fill: #111111; letter-spacing: 0.08em; }
+      .dialogue-text { font-family: 'Fira Sans', -apple-system, sans-serif; font-size: 15.5px; fill: #111111; }
+      .dialogue-text-focus { font-family: 'Fira Sans', -apple-system, sans-serif; font-size: 15.5px; font-weight: 700; fill: #111111; }
+      .foot-box { fill: #111111; rx: 6px; }
+      .foot-label { font-family: 'Space Grotesk', monospace, sans-serif; font-size: 12px; font-weight: 700; fill: #D0CCC2; letter-spacing: 0.12em; }
+      .foot-val { font-family: 'Fira Sans', -apple-system, sans-serif; font-size: 15px; font-weight: 600; fill: #FFFFFF; }
+      .accent-bar { fill: #111111; }
+    </style>
+  </defs>
+
+  <!-- Canvas Background -->
+  <rect width="620" height="680" class="bg" />
+  <rect x="1" y="1" width="618" height="678" class="border" />
+
+  <!-- Broadsheet Header -->
+  <g transform="translate(36, 44)">
+    <text x="0" y="0" class="meta">SKILL: DEBUG-WITH-ME // SPECIMEN B</text>
+    <text x="0" y="32" class="title">GUIDED INQUIRY</text>
+    <text x="0" y="56" class="subtitle">INSPECTING CONSTRAINTS BEFORE CHANGING CODE</text>
+  </g>
+
+  <!-- Dialogue Transcript Stack -->
+  <g transform="translate(36, 130)">
+    <!-- Turn 1: Developer -->
+    <g transform="translate(0, 0)">
+      <rect width="548" height="92" class="dialogue-user" />
+      <rect x="18" y="16" width="50" height="24" class="badge-user" />
+      <text x="27" y="32" class="badge-user-text">YOU</text>
+      <text x="82" y="33" class="dialogue-text">My responsive grid overflows on narrow screens.</text>
+      <text x="82" y="58" class="dialogue-text">Can you fix the layout calculation?</text>
+    </g>
+
+    <!-- Turn 2: Assistant -->
+    <g transform="translate(0, 108)">
+      <rect width="548" height="116" class="dialogue-asst" />
+      <rect x="0" y="0" width="5" height="116" class="accent-bar" rx="2" />
+      <rect x="20" y="16" width="94" height="24" class="badge-asst" />
+      <text x="28" y="32" class="badge-asst-text">ASSISTANT</text>
+      <text x="20" y="64" class="dialogue-text">What do you expect the columns to do when the container shrinks?</text>
+      <text x="20" y="90" class="dialogue-text-focus">Check the minimum track size in your grid declaration first.</text>
+    </g>
+
+    <!-- Turn 3: Developer -->
+    <g transform="translate(0, 240)">
+      <rect width="548" height="96" class="dialogue-user" />
+      <rect x="18" y="16" width="50" height="24" class="badge-user" />
+      <text x="27" y="32" class="badge-user-text">YOU</text>
+      <text x="82" y="33" class="dialogue-text">The minmax() calculation might be keeping tracks too wide.</text>
+      <text x="18" y="66" class="dialogue-text">I will inspect the computed container width in DevTools.</text>
+    </g>
+
+    <!-- Turn 4: Assistant -->
+    <g transform="translate(0, 352)">
+      <rect width="548" height="116" class="dialogue-asst" />
+      <rect x="0" y="0" width="5" height="116" class="accent-bar" rx="2" />
+      <rect x="20" y="16" width="94" height="24" class="badge-asst" />
+      <text x="28" y="32" class="badge-asst-text">ASSISTANT</text>
+      <text x="20" y="64" class="dialogue-text">Exactly. Try reducing the track floor and check the layout at 320px.</text>
+      <text x="20" y="90" class="dialogue-text">What changes when the container drops below the breakpoint?</text>
+    </g>
+  </g>
+
+  <!-- Takeaway Banner -->
+  <g transform="translate(36, 608)">
+    <rect width="548" height="46" class="foot-box" />
+    <text x="20" y="29">
+      <tspan class="foot-label">TAKEAWAY // </tspan>
+      <tspan class="foot-val">Practice identifying the constraint before applying the fix.</tspan>
+    </text>
+  </g>
+</svg>
