@@ -1,0 +1,249 @@
+---
+title: "Kangae"
+japaneseTitle: "考え"
+subtitle: "Developer Learning & Workflow Architecture"
+tagline: "Think with AI, not through AI."
+client: "Personal Practice"
+year: "2026"
+roles:
+  - "Workflow Architecture"
+  - "Interaction Design"
+  - "Prompt Engineering"
+deliverables:
+  - "Portable Markdown Protocol"
+  - "Adaptive Assistance Ladder"
+  - "Reusable Skill Library"
+heroImage: "https://ik.imagekit.io/sorudev/Studio%20Eien/Backgrounds/download_XmsTAxTHE.png?updatedAt=1794726867267"
+heroImageAlt: "Serene architectural workspace representing focus, deliberate practice, and cognitive clarity"
+order: 2
+accentColor: "oklch(0.55 0.22 25)"
+nextProject:
+  slug: "mika"
+  title: "Mika"
+  tagline: "A calmer way to manage your money."
+  thumbnail: "https://ik.imagekit.io/sorudev/Studio%20Eien/Backgrounds/lakewithleaves_FY9DAwWQ_.png?updatedAt=1794727823633"
+---
+
+import EditorialSection from '../../components/astro/work/EditorialSection.astro';
+import VisualFeature from '../../components/astro/work/VisualFeature.astro';
+import AsymmetricGallery from '../../components/astro/work/AsymmetricGallery.astro';
+import TechHighlights from '../../components/astro/work/TechHighlights.astro';
+import ProjectReflection from '../../components/astro/work/ProjectReflection.astro';
+
+<EditorialSection
+	eyebrow='THE IDEA // 01'
+	title='Think With AI, Not Through AI'
+	lead='When accepting generated code becomes second nature, the quiet habit of reasoning through a system can slip away.'
+	layout='asymmetric'
+	signature='SECTION: PREMISE ⟡ METHOD SIGNATURE: V.02'
+>
+	<p>
+		<em>Kangae</em> (考え) is the Japanese word for <em>thought</em>, <em>thinking</em>, or <em>an idea</em>.
+	</p>
+	<p>
+		The project grew out of a personal tension in my daily engineering workflow. Working alongside AI
+		coding assistants provided undeniable momentum, but I noticed a subtle pattern forming: whenever I
+		encountered a tricky layout edge case or an unfamiliar API, it was tempting to let the assistant generate
+		the entire block and move on.
+	</p>
+	<p>
+		The features shipped and the tests passed, but I often closed my editor without a clear mental model of how
+		the pieces actually fit together.
+	</p>
+	<p>
+		Kangae started as an effort to restore that balance. It is not an argument against AI, nor a refusal of
+		generated code. Rather, it is an intentional boundary: <strong>use AI for thoughtful leverage without
+		outsourcing the thinking that builds capability.</strong>
+	</p>
+	<p>
+		Automate repetitive boilerplate and mechanical syntax lookup, but protect the reasoning, debugging, and
+		experimentation that develop long-term engineering judgment.
+	</p>
+</EditorialSection>
+
+
+<VisualFeature
+	image='https://ik.imagekit.io/sorudev/Studio%20Eien/Backgrounds/forest_shrine1_8CHVgJTxRh.png?updatedAt=1794727812644'
+	alt='Serene Japanese forest shrine geometry evoking intentional space, focus, and quiet balance'
+	caption='One portable folder (.kangae/). Vendor-neutral Markdown instructions that guide collaboration in compatible AI tools.'
+	figNumber='FIG. 01'
+	fullBleed={false}
+	aspectRatio='21/9'
+/>
+
+
+<EditorialSection
+	eyebrow='THE APPROACH // 02'
+	title='Learning Through Friction'
+	lead='Real understanding requires some resistance. Assistance should remove the friction that wastes attention, not the friction that cultivates skill.'
+	layout='asymmetric'
+	signature='SECTION: DIALECTIC ⟡ METHOD SIGNATURE: V.03'
+>
+	<p>
+		When debugging, our first impulse is often to paste the error log and ask for the fix. But skipping
+		straight to the answer bypasses the most informative step in software engineering: forming a hypothesis,
+		predicting runtime behavior, and gathering evidence to test it.
+	</p>
+	<p>
+		Kangae frames this around a simple guideline called <strong>The Ownership Rule</strong>: before asking the
+		assistant to solve a problem, consider whether doing so saves tedious, mechanical work or removes useful
+		practice. If it exercises a skill you are actively developing, prefer collaboration over immediate completion.
+	</p>
+	<p>
+		In practice, the workflow encourages a four-step interaction loop:
+	</p>
+	<ul>
+		<li>
+			<strong>Struggle:</strong> Engage with the problem first, clarify symptoms, and form an initial hypothesis.
+		</li>
+		<li>
+			<strong>Assist:</strong> The assistant offers the smallest nudge likely to unblock you—a focused question or conceptual pointer.
+		</li>
+		<li>
+			<strong>Understand:</strong> Verify the result, interpret test or DevTools evidence, and explain the mechanism.
+		</li>
+		<li>
+			<strong>Return Control:</strong> Once the blocker is clear, the assistant steps back and returns ownership of the code to you.
+		</li>
+	</ul>
+</EditorialSection>
+
+
+<EditorialSection
+	eyebrow='THE SYSTEM // 03'
+	title='A Workflow, Not Another App'
+	lead='Rather than building a separate IDE or proprietary desktop app, Kangae is packaged as a portable folder of Markdown instructions that lives directly in your project.'
+	layout='asymmetric'
+	signature='SECTION: ARCHITECTURE ⟡ METHOD SIGNATURE: V.04'
+>
+	<p>
+		Kangae requires no build step, no browser extension, and no cloud account. It exists as a vendor-neutral
+		<code>.kangae/</code> folder containing readable Markdown documents. Pointing an AI coding assistant at
+		<code>KANGAE.md</code> establishes a shared set of collaboration conventions.
+	</p>
+	<p>
+		The repository is structured into two core layers:
+	</p>
+	<ul>
+		<li>
+			<strong>The Core Protocol (<code>KANGAE.md</code>):</strong> Always-on collaboration guidelines that
+			adapt naturally across three working contexts: <em>Build</em> (preserving ownership while implementing),
+			<em>Study</em> (active recall and conceptual practice), and <em>Review</em> (evidence-backed critique and
+			tradeoff analysis).
+		</li>
+		<li>
+			<strong>Reusable Skills (<code>skills/</code>):</strong> On-demand workflow templates for recurring tasks,
+			including <code>debug-with-me</code> (hypothesis-first debugging), <code>review-this</code> (risk-prioritized
+			chunk-by-chunk PR reviews), <code>understand-code</code> (guided codebase exploration), <code>reconstruct</code>
+			(re-implementing concepts after assistance), and <code>journal</code> (structured session reflections).
+		</li>
+	</ul>
+	<p>
+		Because these are natural language instructions, they do not act as rigid programmatic constraints. Instead,
+		they provide clear behavioral patterns that help both developer and assistant stay aligned on learning goals.
+	</p>
+</EditorialSection>
+
+
+<EditorialSection
+	eyebrow='THE INTERACTION MODEL // 04'
+	title='Guidance Without Taking Over'
+	lead='True leverage is not about surrendering the keyboard. It is about a calibrated dialogue that offers the smallest nudge needed to unblock you, then promptly returns control.'
+	layout='asymmetric'
+	signature='SECTION: PROTOCOL ⟡ METHOD SIGNATURE: V.05'
+>
+	<p>
+		In traditional AI tooling, assistance is binary: either the assistant generates the whole file,
+		or it does nothing. Kangae replaces this all-or-nothing dynamic with an <strong>Internal Assistance Ladder</strong>.
+	</p>
+	<p>
+		When you encounter an obstacle, the assistant is instructed to offer the least help likely to move you forward:
+	</p>
+	<ul>
+		<li>
+			<strong>Targeted Inquiry:</strong> Asking a clarifying question about assumptions or expected runtime behavior before proposing changes.
+		</li>
+		<li>
+			<strong>Conceptual Pointers:</strong> Directing attention toward relevant documentation, container constraints, or suspicious lines of code.
+		</li>
+		<li>
+			<strong>Structural Scaffolding:</strong> Providing pseudocode or algorithmic outlines for you to implement yourself.
+		</li>
+		<li>
+			<strong>Fallback Solutions:</strong> Providing complete code snippets only when lower levels are insufficient or when fundamentally blocked.
+		</li>
+	</ul>
+	<p>
+		Crucially, assistance is paired with the <strong>Return-Control Protocol</strong>. As soon as you demonstrate
+		understanding of the mechanism—whether by explaining a DevTools measurement or articulating the next step—the
+		assistant steps back. It never lingers to write the surrounding code for you.
+	</p>
+	<p>
+		By maintaining this boundary, sessions feel like collaborating with a thoughtful peer: one who challenges you
+		to understand your own architecture while leaving the agency and the satisfaction of building firmly in your hands.
+	</p>
+</EditorialSection>
+
+
+<TechHighlights
+	japaneseTitle='技術仕様'
+	eyebrow='FOUNDATIONS // 05'
+	title='Four Tenets of Mindful Collaboration'
+	summary='Structured guidelines designed to shape assistant collaboration without vendor lock-in or cognitive overhead.'
+	items={[
+		{
+			number: '01',
+			title: 'Internal Assistance Ladder',
+			subtitle: 'Graduated Help Without Manual Toggles',
+			description:
+				'The assistant is instructed to start with the least help likely to move you forward—a question or conceptual pointer—escalating to pseudocode or concrete examples only when you are fundamentally blocked.',
+			tags: ['Adaptive Guidance', 'Cognitive Support', 'Ownership'],
+		},
+		{
+			number: '02',
+			title: 'The Return-Control Protocol',
+			subtitle: 'Preventing Quiet Dependency',
+			description:
+				'Assistance does not mean taking permanent ownership. Once an obstacle is clarified, the assistant asks what you would do next, stepping back to let you continue implementing.',
+			tags: ['Agency', 'Collaboration', 'Flow State'],
+		},
+		{
+			number: '03',
+			title: 'Context-Fluid Interaction',
+			subtitle: 'Build, Study, and Review Modes',
+			description:
+				'A single session can shift naturally between writing features, practicing active recall on unfamiliar syntax, and conducting evidence-backed code reviews without manually toggling modes.',
+			tags: ['Code Review', 'Active Recall', 'Context Awareness'],
+		},
+		{
+			number: '04',
+			title: 'Portable Markdown Architecture',
+			subtitle: 'One Portable Folder (.kangae/)',
+			description:
+				'Packaged entirely as plain Markdown files. Kangae can be dropped into any project root, kept local to a clone via .git/info/exclude, and referenced across different compatible AI tools.',
+			tags: ['Markdown Protocol', 'Git Local', 'Vendor-Neutral'],
+		},
+	]}
+	signature='SECTION: SPECIFICATION ⟡ KANGAE SYSTEM V.04'
+/>
+
+
+<ProjectReflection
+	japaneseTitle='振り返り'
+	eyebrow='RETROSPECTIVE // 06'
+	japaneseWatermark='考え'
+	title='Understanding is the Outcome'
+	quote='The objective is not to produce the most code in the shortest amount of time. It is to solve problems effectively while continuously improving your ability to solve future problems yourself.'
+	signature='STUDIO EIEN ⟡ MINDFUL WORKFLOWS 2026'
+>
+	<p>
+		Using Kangae has quietly reshaped my day-to-day work. It hasn’t turned me into a radically different
+		engineer, nor does it make working with AI effortless. But it has established a helpful habit: pausing
+		for a moment to reason through a problem before asking for an answer.
+	</p>
+	<p>
+		When working with an AI assistant feels like a thoughtful technical dialogue rather than an automated code
+		generator, programming retains its creative spark. You finish a session with work you genuinely understand,
+		and the quiet satisfaction of knowing you could build it again on your own.
+	</p>
+</ProjectReflection>
