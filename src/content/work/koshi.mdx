@@ -1,0 +1,200 @@
+---
+title: "Kōshi"
+japaneseTitle: "格子"
+subtitle: "Design Systems & Fluid Composition"
+tagline: "Structure creates space for creativity."
+client: "Studio Eien Research"
+year: "2026"
+roles:
+  - "Frontend Architecture"
+  - "Design Systems"
+  - "Typography & Layout"
+deliverables:
+  - "Modern CSS Grid Engine"
+  - "Fluid Type Calculator Integration"
+  - "Container Query Components"
+heroImage: "https://ik.imagekit.io/sorudev/Studio%20Eien/Backgrounds/mountain_INo60XpUz.png?updatedAt=1794727824146"
+heroImageAlt: "Atmospheric ink wash mountain illustration representing the quiet structure of Kōshi"
+order: 1
+accentColor: "oklch(0.55 0.22 25)"
+nextProject:
+  slug: "kangae"
+  title: "Kangae"
+  tagline: "Think with AI, not through AI."
+  thumbnail: "https://ik.imagekit.io/sorudev/Studio%20Eien/Backgrounds/download_XmsTAxTHE.png?updatedAt=1794726867267"
+---
+
+import EditorialSection from '../../components/astro/work/EditorialSection.astro';
+import VisualFeature from '../../components/astro/work/VisualFeature.astro';
+import AsymmetricGallery from '../../components/astro/work/AsymmetricGallery.astro';
+import TechHighlights from '../../components/astro/work/TechHighlights.astro';
+import ProjectReflection from '../../components/astro/work/ProjectReflection.astro';
+
+<EditorialSection
+	eyebrow='CONTEXT // 01'
+	title='The Spatial Equilibrium'
+	lead='When every digital layout defaults to uniform twelve-column boxes, structure becomes an invisible cage rather than an architectural canvas.'
+	layout='asymmetric'
+	signature='SECTION: INQUIRY ⟡ METHOD SIGNATURE: V.02'
+>
+	<p>
+		In modern web development, layout decisions are all too often outsourced to heavy utility
+		frameworks or rigid 12-column grids that enforce mechanical symmetry regardless of content.
+		To break this monotony, developers frequently introduce heavy JavaScript resize observers
+		and masonry scripts, inadvertently trading rendering performance for visual intrigue.
+	</p>
+	<p>
+		<strong>Kōshi (格子)</strong> was conceived as Studio Eien’s internal research initiative into
+		contemporary frontend architecture. It poses a fundamental creative question:
+		<em>
+			Can a layout system possess the mathematical rigor of traditional Japanese architectural
+			lattices while enabling asymmetrical, boundary-free editorial freedom purely in native CSS?
+		</em>
+	</p>
+	<p>
+		The answer lies in embracing native browser capabilities—CSS Cascade Layers, container
+		queries, and mathematical fluid clamps—to construct layouts that are simultaneously
+		structured and serene.
+	</p>
+</EditorialSection>
+
+
+<VisualFeature
+	image='https://ik.imagekit.io/sorudev/Studio%20Eien/Backgrounds/mountain_INo60XpUz.png?updatedAt=1794727824146'
+	alt='Mountain ink wash illustration representing structural stillness and deliberate negative space'
+	caption='Lattice structure as threshold. The mountain ink wash anchors spatial equilibrium.'
+	figNumber='FIG. 01'
+	fullBleed={false}
+	aspectRatio='21/9'
+/>
+
+
+<EditorialSection
+	eyebrow='APPROACH // 02'
+	title='Dual-Engine Mechanics: Grid Meets Boundary-Free Flex'
+	lead='A single layout paradigm cannot solve all editorial demands. True craftsmanship requires choosing the exact physical tool for the spatial plane.'
+	layout='asymmetric'
+	signature='SECTION: MECHANICS ⟡ METHOD SIGNATURE: V.03'
+>
+	<p>
+		Rather than forcing all content into a singular rigid pattern, Kōshi introduces a
+		dual-engine layout model built directly into Studio Eien’s CSS compositions:
+	</p>
+	<ul>
+		<li>
+			<strong>Two-Dimensional CSS Grid (<code>.kos-grid</code>):</strong> Governs macro-composition,
+			explicit column allocations (1 to 12), subgrid row alignments, and dense layout flows.
+		</li>
+		<li>
+			<strong>Boundary-Free Flexbox (<code>.kos-flex-grid</code>):</strong> Replicates fluid editorial
+			broadsheets. Elements claim proportional &ldquo;shares&rdquo; of horizontal space via
+			mathematical <code>flex-basis</code> calculations, adapting seamlessly as screen widths shift
+			without requiring a fixed column scaffold.
+		</li>
+	</ul>
+	<p>
+		By anchoring layout constraints to <code>container-type: inline-size</code> instead of viewport
+		media queries, cards and editorial modules adapt to their immediate parent container. An
+		editorial component behaves with panoramic grandeur in a main feature column, yet
+		instantly and gracefully refolds into a compact index item when positioned in a sidebar.
+	</p>
+</EditorialSection>
+
+
+<AsymmetricGallery
+	japaneseTitle='視覚的検証'
+	eyebrow='ARTIFACT SPECIMENS // 03'
+	title='Asymmetry, Measure & Negative Space'
+	ratio='7-5'
+	items={[
+		{
+			image:
+				'https://ik.imagekit.io/sorudev/Studio%20Eien/Backgrounds/magazine_cover_manga_5__kFkAQWP5U.png?updatedAt=1708435704056',
+			alt: 'Editorial broadsheet composition specimen demonstrating high-contrast typography and inkwork',
+			caption: 'Typographic hierarchy & vertical measure',
+			figNumber: 'SPECIMEN A',
+			span: 7,
+		},
+		{
+			image:
+				'https://ik.imagekit.io/sorudev/Studio%20Eien/Backgrounds/forest_shrine1_8CHVgJTxRh.png?updatedAt=1794727812644',
+			alt: 'Forest shrine geometry showing architectural balance and natural rhythm',
+			caption: 'Architectural threshold and proportion',
+			figNumber: 'SPECIMEN B',
+			span: 5,
+		},
+		{
+			image:
+				'https://ik.imagekit.io/sorudev/Studio%20Eien/Backgrounds/magazine_cover_manga_aIgWKOCZh.png?updatedAt=1708435702457',
+			alt: 'Manga screentone lines and delicate hatching detail',
+			caption: 'Screentone texture & boundary contrast',
+			figNumber: 'SPECIMEN C',
+			span: 12,
+		},
+	]}
+/>
+
+
+<TechHighlights
+	japaneseTitle='技術仕様'
+	eyebrow='ARCHITECTURE // 04'
+	title='Four Structural Pillars'
+	summary='Engineered without build-time compilation loops, runtime JavaScript dependencies, or CSS-in-JS abstractions.'
+	items={[
+		{
+			number: '01',
+			title: 'Container Query Contexts',
+			subtitle: 'Autonomous Component Reflow',
+			description:
+				'Every layout container establishes an inline container-type. Columns auto-collapse based on local width thresholds (@container kos-cq), eliminating brittle viewport-level breakpoint overrides.',
+			tags: ['Container Queries', 'CSS Grid', 'Zero-JS'],
+		},
+		{
+			number: '02',
+			title: 'Boundary-Free Proportional Flex',
+			subtitle: 'Adaptive Row Shares',
+			description:
+				'Custom [kos-col-span="N"] attributes translate directly into proportional flex-grow and gutter-compensated basis calculations, granting items exact visual weight without arbitrary wrappers.',
+			tags: ['Flexbox', 'Math Calcs', 'CSS Custom Props'],
+		},
+		{
+			number: '03',
+			title: 'Cascade Layer Isolation',
+			subtitle: 'Predictable Specificity Hierarchy',
+			description:
+				'Layout rules reside strictly within @layer compositions. This guarantees zero specificity wars when individual case study components or utility overrides are introduced.',
+			tags: ['@layer', 'CSS Architecture'],
+		},
+		{
+			number: '04',
+			title: 'Fluid Typographic Clamping',
+			subtitle: 'Utopia Calculator Integration',
+			description:
+				'Type scales seamlessly scale from --fs-step-000 (11.85px) to --fs-step-12 (230px) using single mathematical clamp formulas mapped across 375px to 1440px viewports without stepped jumping.',
+			tags: ['Fluid Typography', 'Design Tokens'],
+		},
+	]}
+	signature='SECTION: SPECIFICATION ⟡ SYSTEM COMPOSITION V.04'
+/>
+
+
+<ProjectReflection
+	japaneseTitle='振り返り'
+	eyebrow='RETROSPECTIVE // 05'
+	japaneseWatermark='格子'
+	title='Form, Void, and Longevity'
+	quote='Structure is not a constraint on expression; it is the prerequisite for intentional freedom. Like the cedar frames of a traditional machiya house, the grid gives meaning to the empty spaces within.'
+	signature='STUDIO EIEN ⟡ CRAFT ARCHIVE 2026'
+>
+	<p>
+		Building Kōshi reinforced Studio Eien’s foundational philosophy: the most enduring digital
+		experiences are not built on fleeting JavaScript trends or decorative excess, but on deep
+		respect for foundational web standards.
+	</p>
+	<p>
+		By stripping away unnecessary preprocessor abstractions and investing in native CSS
+		primitives, Kōshi achieves total layout flexibility with instantaneous load times and zero
+		runtime overhead. It now serves as the compositional spine for all of Studio Eien’s digital
+		editorials.
+	</p>
+</ProjectReflection>
