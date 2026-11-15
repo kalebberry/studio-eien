@@ -229,7 +229,8 @@
 
 			p {
 				text-transform: uppercase;
-				font-size: var(--fs-step-0);
+				font-size: clamp(0.6875rem, 2.2vw, var(--fs-step-0));
+				max-width: none;
 			}
 		}
 
@@ -241,7 +242,8 @@
 
 			p {
 				text-transform: uppercase;
-				font-size: var(--fs-step-0);
+				font-size: clamp(0.6875rem, 2.2vw, var(--fs-step-0));
+				max-width: none;
 			}
 		}
 
@@ -253,7 +255,8 @@
 
 			p {
 				text-transform: uppercase;
-				font-size: var(--fs-step-0);
+				font-size: clamp(0.6875rem, 2.2vw, var(--fs-step-0));
+				max-width: none;
 			}
 		}
 	}
