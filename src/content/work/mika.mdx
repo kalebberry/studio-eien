@@ -1,0 +1,197 @@
+---
+title: "Mika"
+japaneseTitle: "美香"
+subtitle: "Personal Finance & Budgeting"
+tagline: "A calmer way to manage your money."
+client: "Studio Eien Practice"
+year: "2026"
+roles:
+  - "Product Design"
+  - "Frontend Engineering"
+  - "Neurodiversity & UX"
+deliverables:
+  - "Calm Ledger Architecture"
+  - "Sensory Contrast Tokens"
+  - "Low-Cognitive Load Framework"
+heroImage: "https://ik.imagekit.io/sorudev/Studio%20Eien/Backgrounds/lakewithleaves_FY9DAwWQ_.png?updatedAt=1794727823633"
+heroImageAlt: "Serene lake with floating leaves evoking emotional stillness and financial clarity"
+order: 3
+accentColor: "oklch(0.55 0.22 25)"
+nextProject:
+  slug: "koshi"
+  title: "Kōshi"
+  tagline: "Structure creates space for creativity."
+  thumbnail: "https://ik.imagekit.io/sorudev/Studio%20Eien/Backgrounds/mountain_INo60XpUz.png?updatedAt=1794727824146"
+---
+
+import EditorialSection from '../../components/astro/work/EditorialSection.astro';
+import VisualFeature from '../../components/astro/work/VisualFeature.astro';
+import AsymmetricGallery from '../../components/astro/work/AsymmetricGallery.astro';
+import TechHighlights from '../../components/astro/work/TechHighlights.astro';
+import ProjectReflection from '../../components/astro/work/ProjectReflection.astro';
+
+<EditorialSection
+	eyebrow='CHALLENGE // 01'
+	title='The Sensory Overload of Modern Finance'
+	lead='Mainstream budgeting applications weaponize anxiety: flashing crimson banners, judgmental notifications, and cluttered charts that trigger avoidance rather than clarity.'
+	layout='asymmetric'
+	signature='SECTION: CHALLENGE ⟡ METHOD SIGNATURE: V.02'
+>
+	<p>
+		Most digital finance tools are designed around high-arousal sensory stimulation. Red deficit
+		callouts, casino-like gamification rings, and persistent notifications turn simple financial
+		check-ins into experiences of shame and dread.
+	</p>
+	<p>
+		For neurodivergent individuals—especially those navigating ADHD or executive dysfunction—this
+		visual clutter creates intense cognitive friction. When opening a budget app feels like facing an
+		accusation, the natural human response is complete avoidance, causing financial health to suffer
+		in silence.
+	</p>
+	<p>
+		<strong>Mika (美香)</strong> was born from a desire to create a profoundly different experience:
+		an unhurried, reassuring sanctuary where money is managed with quiet confidence and emotional peace.
+	</p>
+</EditorialSection>
+
+
+<VisualFeature
+	image='https://ik.imagekit.io/sorudev/Studio%20Eien/Backgrounds/lakewithleaves_FY9DAwWQ_.png?updatedAt=1794727823633'
+	alt='Serene lake with floating autumn leaves evoking emotional stillness and financial clarity'
+	caption='Still water over turbulent charts. Mika replaces punitive alerts with emotional equilibrium.'
+	figNumber='FIG. 01'
+	fullBleed={false}
+	aspectRatio='21/9'
+/>
+
+
+<EditorialSection
+	eyebrow='APPROACH // 02'
+	title='Broadsheet Clarity & Low-Arousal Interaction'
+	lead='Budgeting reimagined as a peaceful morning ritual. No flashing alarms, no judgmental scores, no sensory noise.'
+	layout='asymmetric'
+	signature='SECTION: ARCHITECTURE ⟡ METHOD SIGNATURE: V.03'
+>
+	<p>
+		Mika discards the dashboard metaphor entirely. Drawing inspiration from traditional Japanese
+		merchant ledgers (<em>Daifukuchō</em> 大福帳) and minimalist editorial broadsheets, the interface
+		presents financial information with spacious, calm typography and soft, paper-like tonality.
+	</p>
+	<ul>
+		<li>
+			<strong>Zero-Judgment Visual Language:</strong> Deficits and surpluses are communicated through
+			deliberate typographic measure and layout hierarchy, entirely eliminating aggressive red hues.
+		</li>
+		<li>
+			<strong>Single-Horizon Decision Making:</strong> The interface presents only one decision at a
+			time—such as reviewing weekly groceries or categorizing an unassigned transaction—preventing
+			the cognitive paralysis of 50-row spreadsheets.
+		</li>
+		<li>
+			<strong>Tactile Ledger Rhythm:</strong> Generous whitespace and muted dividers transform daily
+			accounting into an orderly, reassuring ritual.
+		</li>
+	</ul>
+	<p>
+		By respecting human sensory limits, Mika turns budgeting from an intimidating chore into a
+		grounding daily practice.
+	</p>
+</EditorialSection>
+
+
+<AsymmetricGallery
+	japaneseTitle='平穏な設計'
+	eyebrow='SENSORY ARTIFACTS // 03'
+	title='Deliberate Pace & Tactile Restraint'
+	ratio='7-5'
+	items={[
+		{
+			image:
+				'https://ik.imagekit.io/sorudev/Studio%20Eien/Backgrounds/manga_beautiful_7qMh10Vza.png?updatedAt=1708505549765',
+			alt: 'Tactile ledger typography specimen with gentle paper-like tones and clear hierarchies',
+			caption: 'Quiet ledger typography & soft contrast balance',
+			figNumber: 'SPECIMEN A',
+			span: 7,
+		},
+		{
+			image:
+				'https://ik.imagekit.io/sorudev/Studio%20Eien/Backgrounds/forest_shrine1_8CHVgJTxRh.png?updatedAt=1794727812644',
+			alt: 'Forest shrine photograph evoking natural calm and architectural purity',
+			caption: 'Atmospheric space & sensory decompression',
+			figNumber: 'SPECIMEN B',
+			span: 5,
+		},
+		{
+			image:
+				'https://ik.imagekit.io/sorudev/Studio%20Eien/Backgrounds/mountain_INo60XpUz.png?updatedAt=1794727824146',
+			alt: 'Mountain landscape representing unshakable financial grounding and tranquility',
+			caption: 'Enduring stability & peaceful perspective',
+			figNumber: 'SPECIMEN C',
+			span: 12,
+		},
+	]}
+/>
+
+
+<TechHighlights
+	japaneseTitle='技術仕様'
+	eyebrow='ACCESSIBLE SYSTEMS // 04'
+	title='Four Tenets of Neurodivergent UX'
+	summary='Engineered to minimize executive fatigue, safeguard emotional calm, and maintain total reliability.'
+	items={[
+		{
+			number: '01',
+			title: 'Zero-Judgment Palette',
+			subtitle: 'Low-Arousal Sensory Tokens',
+			description:
+				'Eliminated alarmist red and harsh contrast tokens in favor of warm, muted paper tones. Negative variances are indicated through neutral typographic styling and spatial layout.',
+			tags: ['Color Theory', 'ADHD Design', 'Low-Arousal'],
+		},
+		{
+			number: '02',
+			title: 'Single-Horizon Decisions',
+			subtitle: 'Progressive Disclosure Architecture',
+			description:
+				'The UI chunks complex monthly budgeting into single, self-contained choices. At any given moment, the user is presented with at most one decision, banishing executive overwhelm.',
+			tags: ['Cognitive Load', 'Progressive Disclosure'],
+		},
+		{
+			number: '03',
+			title: 'Local-First Resilient Ledger',
+			subtitle: 'Offline Sync & Optimistic UI',
+			description:
+				'Built on an embedded SQLite and IndexedDB architecture. Data persists instantly offline with zero latency, eliminating spinning loading indicators that fracture ADHD focus.',
+			tags: ['Local-First', 'IndexedDB', 'Zero-Latency'],
+		},
+		{
+			number: '04',
+			title: 'WCAG AAA Motor & Focus States',
+			subtitle: 'Inclusive Physical Interaction',
+			description:
+				'Generous 48px+ touch targets, prominent tactile focus rings, and full keyboard navigation ensure effortless use during moments of distraction, motor fatigue, or tremors.',
+			tags: ['WCAG AAA', 'Keyboard UX', 'Accessibility'],
+		},
+	]}
+	signature='SECTION: SPECIFICATION ⟡ MIKA SYSTEM V.04'
+/>
+
+
+<ProjectReflection
+	japaneseTitle='振り返り'
+	eyebrow='RETROSPECTIVE // 05'
+	japaneseWatermark='美香'
+	title='Kindness as an Engineering Standard'
+	quote='Financial clarity is not achieved through guilt or surveillance; it blossoms in an environment of calm intention, patient pacing, and unhurried space.'
+	signature='STUDIO EIEN ⟡ SENSORY CRAFT 2026'
+>
+	<p>
+		Designing Mika reshaped how we think about product ethics at Studio Eien. Software that
+		manipulates anxiety to drive daily active engagement is fundamentally broken, regardless of
+		its aesthetic polish.
+	</p>
+	<p>
+		True craftsmanship honors human emotional vulnerability. By creating an interface that feels
+		like a deep, grounding breath, Mika proves that technology can be a calming force in an
+		overstimulated world.
+	</p>
+</ProjectReflection>
